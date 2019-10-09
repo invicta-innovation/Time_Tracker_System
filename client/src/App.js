@@ -1,43 +1,41 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import "./App.css";
-import { Provider } from "react-redux";
-import store from "./store";
-import TopNav from "./layout/top-nav";
-import SideNav from "./layout/side-nav";
-import Footer from "./layout/footer";
-import DynamicEdit from "./components/test/dynamic-edit";
-import test from "./components/test/test";
-import Home from "./layout/home";
+import React, { Component } from 'react';
+import './App.css';
+import { Route, Switch, BrowserRouter, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <div className="">
-        <TopNav />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route
-            render={() => (
-              <div className="d-flex align-items-stretch">
-                <SideNav />
-                <div className="page-holder w-100 d-flex flex-wrap">
-                  <div className="container-fluid px-xl-5">
-                  <div className="container-fluid px-xl-5">
-                    <Route exact path="/test" component={test} />
-                    <Route exact path="/form" component={DynamicEdit} />
-                  </div>
-                </div>
-                </div>
-                </div>
-            )}
-          />
-        </Switch>
-      </div>
-      <Footer />
+
+import Login from './layout/login';
+import { checkAuthState ,takeAuth} from './_actions/auth-action';
+import { ProtectedRoute } from './commons/shared/auth/ProtectedRoute';
+import { LoggedInRoute } from './commons/shared/auth/LoggedInRoute';
+import DefaultLayout from './layout/default-layout';
+import authService from "./_utils/auth-service";
+let decodeToken;
+class App extends Component {
+  componentWillMount() {
+    this.props.checkAuthState();
+  }
+ 
+  render() {
+    return (
+      <div>
+          <Switch>
+            {/* <Route path="/login" component={Login} /> */}
+            <Route path="/" component={DefaultLayout} />
+          </Switch>
           
-    </Provider>
-  );
+      </div>
+    );
+  }
+
 }
 
-export default App;
+const mapStateToProps = state => ({
+  auth: state.authStore.authData
+});
+
+const mapDispachToProps = dispatch => ({
+  checkAuthState: () => dispatch(checkAuthState())
+});
+
+export default connect(mapStateToProps, mapDispachToProps)(App);
