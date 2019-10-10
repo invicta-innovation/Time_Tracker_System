@@ -7,10 +7,10 @@ class Footer extends Component{
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-6 text-center text-md-left text-primary">
-                <p className="mb-2 mb-md-0">SGIC company &copy; 2019</p>
+                <p className="mb-2 mb-md-0">Invicta Innovation company &copy; 2019</p>
               </div>
               <div className="col-md-6 text-center text-md-right text-gray-400">
-                <p className="mb-0">Design by <a href="#" className="external text-gray-400">SGIC Devs</a></p>
+                <p className="mb-0">Design by <a className="external text-gray-400">INVICTA Devs</a></p>
                 
               </div>
             </div>

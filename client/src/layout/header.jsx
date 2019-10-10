@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import { logout } from "../_actions/auth-action";
-import authService from '../_utils/auth-service';
+
 class Header extends Component {
   handleLogout = () => {
     this.props.logout();
@@ -34,7 +34,7 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-        <nav className="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" className="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i className="fas fa-align-left"></i></a><a href="index.html" className="navbar-brand font-weight-bold text-uppercase text-base">LEAVE MANAGEMENT SYSTEM</a>
+        <nav className="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" className="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i className="fas fa-align-left"></i></a><a href="index.html" className="navbar-brand font-weight-bold text-uppercase text-base">Invicta Innovation</a>
           <ul className="ml-auto d-flex align-items-center list-unstyled mb-0">
             <li className="nav-item">
               <form id="searchForm" className="ml-auto d-none d-lg-block">

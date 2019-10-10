@@ -70,7 +70,9 @@ const linkArray = [
 
 class SideBar extends Component {
   state = {
-    role: '',
+    // role: '',
+    role: 'HR',
+
   }
   componentDidMount() {
     let token = authService.getToken();

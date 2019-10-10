@@ -3,7 +3,6 @@ import './App.css';
 import { Route, Switch, BrowserRouter, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-
 import Login from './layout/login';
 import { checkAuthState ,takeAuth} from './_actions/auth-action';
 import { ProtectedRoute } from './commons/shared/auth/ProtectedRoute';
@@ -18,13 +17,11 @@ class App extends Component {
  
   render() {
     return (
-      <div>
-          <Switch>
-            {/* <Route path="/login" component={Login} /> */}
+           <Switch>
+            <Route path="/login" component={Login} />
             <Route path="/" component={DefaultLayout} />
           </Switch>
           
-      </div>
     );
   }
 

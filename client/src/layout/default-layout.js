@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect,Route,Router, Switch } from 'react-router-dom';
+import { Redirect,Route,Router, Switch,Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ProtectedRoute } from '../commons/shared/auth/ProtectedRoute';
 import { LoggedInRoute } from '../commons/shared/auth/LoggedInRoute';
@@ -32,6 +32,7 @@ import authService from "../_utils/auth-service";
 import Allocation from '../views/leave-system/leave-allocation/Allocation';
 import ModalCalendar from '../views/leave-system/leave-request/ModalCalendar';
 import WorkflowMain from '../views/leave-system/leave-workflow/workflow-main';
+import Card from '../commons/card';
 
 export class DefaultLayout extends Component {
  
@@ -53,7 +54,7 @@ export class DefaultLayout extends Component {
           <div className="page-holder w-100 d-flex flex-wrap">
             <div className="container-fluid px-xl-5">
             <Switch>
-                <ProtectedRoute  path="/leaveDashboard" component={LeaveDashboard} />
+                {/* <ProtectedRoute  path="/leaveDashboard" component={LeaveDashboard} />
                 <ProtectedRoute  path="/requestLeave" component={RequestLeave} />
                 <ProtectedRoute  path="/leaveHistory" component={LeaveHistory} />
                 <ProtectedRoute  path="/lieuLeave" component={LieuLeave} />
@@ -70,7 +71,25 @@ export class DefaultLayout extends Component {
                 <ProtectedRoute  path="/manageAllocation/:id" component={Allocation} />
                 <ProtectedRoute  path="/recuitmentType" component={RecuitmentType} />
                 <ProtectedRoute  path="/designation" component={ManageDesignation} />
-                <ProtectedRoute  path="/workflow/:id" component={WorkflowMain} />
+                <ProtectedRoute  path="/workflow/:id" component={WorkflowMain} /> */}
+                <Route  path="/leaveDashboard" component={LeaveDashboard} />
+                <Route  path="/requestLeave" component={RequestLeave} />
+                <Route  path="/leaveHistory" component={LeaveHistory} />
+                <Route  path="/lieuLeave" component={LieuLeave} />
+                <Route  path="/manageLeaveDashboard" component={ManageLeaveDashBoard} />
+                <Route  path="/manageLeaveRequests" component={ManageProcessLeave} />
+                <Route  path="/manageLeaveLeiuLeave" component={ManageLeaveLieu} />
+                <Route  path="/manageCarryForward" component={ManageCarryforward} />
+                <Route  path="/configurecalendar" component={ConfigureCalendar} />
+                <Route  path="/manageRole" component={Role} />
+                <Route  path="/manageUser" component={Users} />
+                <Route  path="/configleave" component={ManageLeaveTypesAndPolicies} />
+                <Route  path="/indivitualLeaveHistory" component={ManageIndivitualLeaveHistory} />
+                <Route  path="/leaveAllocation" component={ManageLeaveAllocation} />
+                <Route  path="/manageAllocation/:id" component={Allocation} />
+                <Route  path="/recuitmentType" component={RecuitmentType} />
+                <Route  path="/designation" component={ManageDesignation} />
+                <Route  path="/workflow/:id" component={WorkflowMain} />
                 {this.renderLogin()}
              </Switch>
            
