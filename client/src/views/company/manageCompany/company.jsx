@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import CompanyModal from './company-modal';
+import CompanyList from './company-list';
+import {showModal} from '../../../_actions/company-action';
 
 class Company extends Component {
     render() {
@@ -7,7 +11,7 @@ class Company extends Component {
 
             <div class="card">
               <div class="d-flex justify-content-between card-header">
-                <h3 class="h6 text-uppercase mb-0">Company</h3>
+                <h3 class="h6 text-uppercase mb-0">List of Company</h3>
     
                 <button
                   type="submit"
@@ -21,10 +25,10 @@ class Company extends Component {
                   + Company
             </button>
             
-                {/* <CompanyModal /> */}
+                <CompanyModal />
               </div>
               <div class="card-body">
-                {/* <CompanyList /> */}
+                <CompanyList />
               </div>
             </div>
           </section>
@@ -32,4 +36,10 @@ class Company extends Component {
     }
 }
 
-export default Company;
+const mapStateToProps = state =>({
+  // tests:state.testStore.tests
+})
+const mapDispatchToProps=dispatch=>({
+  showModal: (status)=> dispatch(showModal({action:'ADD',show:status,title:'Add Company'}))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Company)

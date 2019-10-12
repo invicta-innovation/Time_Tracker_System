@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import ProjectModal from './project-modal';
+import ProjectList from './project-list';
+import {showModal} from '../../../_actions/project-action';
 
 class Project extends Component {
     render() {
@@ -21,10 +25,10 @@ class Project extends Component {
                   + Project
             </button>
             
-                {/* <ProjectModal /> */}
+                <ProjectModal />
               </div>
               <div class="card-body">
-                {/* <ProjectList /> */}
+                <ProjectList />
               </div>
             </div>
           </section>
@@ -32,4 +36,10 @@ class Project extends Component {
     }
 }
 
-export default Project;
+const mapStateToProps = state =>({
+  
+})
+const mapDispatchToProps=dispatch=>({
+  showModal: (status)=> dispatch(showModal({action:'ADD',show:status,title:'Add Project'}))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(Project)
