@@ -9,6 +9,10 @@ import designationReducer from './designation-reducer';
 import lieuLeaveReducer from'./lieuLeaveRequest-reducer';
 import {authReducer} from'./auth-reducer';
 import leaveAllocationReducer from "./leave-allocation-reducer";
+
+import companyReducer from "./company-reducer";
+import projectReducer from "./project-reducer";
+
 export default combineReducers({
   roleStore: roleReducer,
   // leave: leaveHistoryReducer,
@@ -19,5 +23,9 @@ export default combineReducers({
   leaveStore: leaveReducer,
   lieuLeaveRequestStore:lieuLeaveReducer,
   authStore:authReducer,
-  leaveAllocationStore:leaveAllocationReducer
+  leaveAllocationStore:leaveAllocationReducer,
+
+  companyStore:companyReducer,
+  projectStore:projectReducer,
+
 });

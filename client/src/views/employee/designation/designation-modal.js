@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CompanyModel extends Component {
+class DesignationModal extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class CompanyModel extends Component {
     }
 }
 
-export default CompanyModel;
+export default DesignationModal;

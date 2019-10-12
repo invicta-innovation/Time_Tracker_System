@@ -69,4 +69,21 @@ export const UPDATE_LEAVE_ALLOCATION = "UPDATE_LEAVE_ALLOCATION";
 export const SHOW_MODAL_ALLOCATION="SHOW_MODAL_ALLOCATION";
 export const HIDE_MODAL_ALLOCATION="HIDE_MODAL_ALLOCATION";
 
+// Company Action
+export const GET_COMPANY = "GET_COMPANY";
+export const ADD_COMPANY = "ADD_COMPANY";
+export const DELETE_COMPANY = "DELETE_COMPANY";
+export const UPDATE_COMPANY = "UPDATE_COMPANY";
+export const SHOW_MODAL_COMPANY="SHOW_COMPANY";
+
+
+// Project Action
+export const GET_PROJECT = "GET_PROJECT ";
+export const ADD_PROJECT  = "ADD_PROJECT ";
+export const DELETE_PROJECT  = "DELETE_PROJECT ";
+export const UPDATE_PROJECT  = "UPDATE_PROJECT ";
+export const SHOW_MODAL_PROJECT ="SHOW_PROJECT ";
+
+
+
 

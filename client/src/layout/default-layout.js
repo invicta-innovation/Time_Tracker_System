@@ -34,6 +34,13 @@ import ModalCalendar from '../views/leave-system/leave-request/ModalCalendar';
 import WorkflowMain from '../views/leave-system/leave-workflow/workflow-main';
 import Card from '../commons/card';
 
+import Company from "../views/company/manageCompany/company";
+import Project from "../views/company/manageProject/project";
+import TimeSheet from "../views/timetracker/timesheet/timeSheet";
+import Profile from "../views/employee/profile/profile";
+import Designation from '../views/leave-system/manage-designation/designation';
+// import RecuitmentType from '../views/employee/recuitment-type/index';
+
 export class DefaultLayout extends Component {
  
       renderLogin=()=>{
@@ -51,6 +58,7 @@ export class DefaultLayout extends Component {
         <Header />
         <div className="d-flex align-items-stretch">
           <SideBar />
+{/* <Company/> */}
           <div className="page-holder w-100 d-flex flex-wrap">
             <div className="container-fluid px-xl-5">
             <Switch>
@@ -90,6 +98,12 @@ export class DefaultLayout extends Component {
                 <Route  path="/recuitmentType" component={RecuitmentType} />
                 <Route  path="/designation" component={ManageDesignation} />
                 <Route  path="/workflow/:id" component={WorkflowMain} />
+
+                <Route path='/company' component={Company}/>
+                <Route path='/project' component={Project}/>
+                <Route path='/timeSheet' component={TimeSheet}/>
+                <Route path='/profile' component={Profile}/>
+                <Route path='/designation' component={Designation}/>
                 {this.renderLogin()}
              </Switch>
            

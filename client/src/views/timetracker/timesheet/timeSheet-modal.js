@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CompanyEdit extends Component {
+class TimeSheetModal extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class CompanyEdit extends Component {
     }
 }
 
-export default CompanyEdit;
+export default TimeSheetModal;

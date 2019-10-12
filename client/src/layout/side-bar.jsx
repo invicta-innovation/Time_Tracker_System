@@ -60,7 +60,7 @@ const linkArray = [
   {
     menuName: "Company",
     menuLink: "#",
-    icon: "fas fa-file-alt mr-3 text-gray",
+    icon: "far fa-building mr-3 text-gray",
     permission: ['HR', 'EMPLOYEE'],
     subMenu: [
       { subMenuLink: "/company", subMenuName: "Manage Company" },
@@ -71,21 +71,23 @@ const linkArray = [
   {
     menuName: "Time Sheet",
     menuLink: "#",
-    icon: "fas fa-file-alt mr-3 text-gray",
+    icon: "fas fa-hourglass-start mr-3 text-gray",
     permission: ['HR', 'EMPLOYEE'],
     subMenu: [
-      { subMenuLink: "/timeSheet", subMenuName: "Time Sheet" },     
+      { subMenuLink: "/timeSheet", subMenuName: "Time Sheet" }, 
+         
     ]
   },
   {
     menuName: "Employee",
     menuLink: "#",
-    icon: "fas fa-file-alt mr-3 text-gray",
+    icon: "fas fa-address-card mr-3 text-gray",
     permission: ['HR', 'EMPLOYEE'],
     subMenu: [
       { subMenuLink: "/designation", subMenuName: "Designation" },
       { subMenuLink: "/recruitment", subMenuName: "Recruitment" },
       { subMenuLink: "/profile", subMenuName: "Profile" },
+      <i class="fas fa-address-card"></i>
 
     ]
   },
@@ -104,7 +106,6 @@ class SideBar extends Component {
   state = {
     // role: '',
     role: 'HR',
-
   }
   componentDidMount() {
     let token = authService.getToken();

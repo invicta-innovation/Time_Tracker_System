@@ -9,7 +9,7 @@ import { ProtectedRoute } from './commons/shared/auth/ProtectedRoute';
 import { LoggedInRoute } from './commons/shared/auth/LoggedInRoute';
 import DefaultLayout from './layout/default-layout';
 import authService from "./_utils/auth-service";
-import Company from "../src/views/company/company/company";
+
 let decodeToken;
 class App extends Component {
   componentWillMount() {
@@ -21,7 +21,7 @@ class App extends Component {
            <Switch>
             <Route path="/login" component={Login} />
             <Route path="/" component={DefaultLayout} />
-            <Route path ="/company" component={Company}/>
+            
           </Switch>
           
     );
