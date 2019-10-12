@@ -4,9 +4,9 @@ export const fetchCompany= () => dispatch =>{
     dispatch({
         type:GET_COMPANY,
         payload:[
-            {id:1,company:'mitra'},
-            {id:2,company:'virtusa'},
-            {id:3,company:'axiata'}
+            {id:1,companyName:'mitra',telNo:'0110123456',email:'mitra@gmail.com',address:'Ratmalana'},
+            {id:2,companyName:'virtusa',telNo:'0110123456',email:'virtusa@gmail.com',address:'Dematagoda'},
+            {id:3,companyName:'axiata',telNo:'0110123456',email:'axiata@gmail.com',address:'Bambalapitty'}
         ]
     })
 }

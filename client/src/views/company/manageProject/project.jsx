@@ -11,7 +11,7 @@ class Project extends Component {
 
             <div class="card">
               <div class="d-flex justify-content-between card-header">
-                <h3 class="h6 text-uppercase mb-0">Project</h3>
+                <h3 class="h6 text-uppercase mb-0"> List of Project</h3>
     
                 <button
                   type="submit"

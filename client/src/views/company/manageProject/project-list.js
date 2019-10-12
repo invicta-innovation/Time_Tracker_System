@@ -14,13 +14,22 @@ class ProjectList extends Component {
               <tr>
                 <th>Id</th>
                 <th>Project Name</th>
+                <th>Started Date</th>
+                <th>Finished Date</th>
+                <th>Description</th>
+                <th>Project Status</th>
               </tr>
             </thead>
             <tbody>
               {this.props.projects.map(project => (
                 <tr key={project.id}>
                   <td>{project.id}</td>
-                  <td>{project.project}</td>
+                  <td>{project.projectName}</td>
+                  <td>{project.startedDate}</td>
+                  <td>{project.finishedDate}</td>
+                  <td>{project.description}</td>
+                  <td>{project.projectStatus}</td>
+
                   <button onClick={()=>this.props.showModal(project)}>edit</button>
                 </tr>
               ))}

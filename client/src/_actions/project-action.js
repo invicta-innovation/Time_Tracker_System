@@ -4,9 +4,8 @@ export const fetchProject= () => dispatch =>{
     dispatch({
         type:GET_PROJECT,
         payload:[
-            {id:1,project:'HRM'},
-            {id:2,project:'DTS'},
-            {id:3,project:'TRS'}
+            {id:1,projectName:'HRM',startedDate:'05/12/2018',finishedDate:'07/11/2019',description:'hrm',projectStatus:'closed'},
+            
         ]
     })
 }

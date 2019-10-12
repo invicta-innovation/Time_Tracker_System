@@ -7,14 +7,20 @@ import {showModal} from '../../../_actions/company-action';
 class CompanyModal extends Component {
     state={
         id:null,
-        company:''
+        companyName:'',
+        telNo:'',
+        email:'',
+        address:'',
       }
       
       componentWillReceiveProps(nextProps){
         console.log(nextProps.companyObj)
         this.setState({
           id:nextProps.companyObj.id,
-          company:nextProps.companyObj.company
+          companyName:nextProps.companyObj.companyName,
+          telNo:nextProps.companyObj.telNo,
+          email:nextProps.companyObj.email,
+          address:nextProps.companyObj.address,
           });
       }
       handleChange=(e)=>{
@@ -53,11 +59,44 @@ class CompanyModal extends Component {
             </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
-                  <Form.Label> Company : </Form.Label>
+                  <Form.Label> Company Name: </Form.Label>
                   <Form.Control
-                  value={this.state.company} 
+                  value={this.state.companyName} 
                   type="text" 
-                  name="company"
+                  name="companyName"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Tel No : </Form.Label>
+                  <Form.Control
+                  value={this.state.telNo} 
+                  type="text" 
+                  name="telNo"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Email : </Form.Label>
+                  <Form.Control
+                  value={this.state.email} 
+                  type="text" 
+                  name="email"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Address : </Form.Label>
+                  <Form.Control
+                  value={this.state.address} 
+                  type="text" 
+                  name="address"
                   onChange={this.handleChange}
                   />
                 </Form.Group>

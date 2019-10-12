@@ -7,14 +7,23 @@ import {showModal} from '../../../_actions/project-action';
 class ProjectModal extends Component {
     state={
         id:null,
-        project:''
+        projectName:'',
+        startedDate:'',
+        finishedDate:'',
+        description:'',
+        projectStatus:''
       }
       
       componentWillReceiveProps(nextProps){
         console.log(nextProps.projectObj)
         this.setState({
           id:nextProps.projectObj.id,
-          project:nextProps.projectObj.project
+          projectName:nextProps.projectObj.projectName,
+          startedDate:nextProps.projectObj.startedDate,
+          finishedDate:nextProps.projectObj.finishedDate,
+          description:nextProps.projectObj.description,
+          projectStatus:nextProps.projectObj.projectStatus,
+          
           });
       }
       handleChange=(e)=>{
@@ -53,11 +62,55 @@ class ProjectModal extends Component {
             </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
-                  <Form.Label> Project : </Form.Label>
+                  <Form.Label> Project Name: </Form.Label>
                   <Form.Control
-                  value={this.state.company} 
+                  value={this.state.projectName} 
                   type="text" 
-                  name="project"
+                  name="projectName"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Started Date: </Form.Label>
+                  <Form.Control
+                  value={this.state.startedDate} 
+                  type="text" 
+                  name="startedDate"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Finished Date: </Form.Label>
+                  <Form.Control
+                  value={this.state.finishedDate} 
+                  type="text" 
+                  name="finishedDate"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Description: </Form.Label>
+                  <Form.Control
+                  value={this.state.description} 
+                  type="text" 
+                  name="description"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Project Status: </Form.Label>
+                  <Form.Control
+                  value={this.state.projectStatus} 
+                  type="text" 
+                  name="projectStatus"
                   onChange={this.handleChange}
                   />
                 </Form.Group>

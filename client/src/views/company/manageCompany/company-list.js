@@ -14,13 +14,19 @@ class CompanyList extends Component {
               <tr>
                 <th>Id</th>
                 <th>Company Name</th>
+                <th>Tel No</th>
+                <th>Email</th>
+                <th>Address</th>
               </tr>
             </thead>
             <tbody>
               {this.props.companies.map(company => (
                 <tr key={company.id}>
                   <td>{company.id}</td>
-                  <td>{company.company}</td>
+                  <td>{company.companyName}</td>
+                  <td>{company.telNo}</td>
+                  <td>{company.email}</td>
+                  <td>{company.address}</td>
                   <button onClick={()=>this.props.showModal(company)}>edit</button>
                 </tr>
               ))}
