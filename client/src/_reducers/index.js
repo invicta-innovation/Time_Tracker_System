@@ -12,6 +12,7 @@ import leaveAllocationReducer from "./leave-allocation-reducer";
 
 import companyReducer from "./company-reducer";
 import projectReducer from "./project-reducer";
+import recruitmentReducer from "./recruitment-reducer";
 
 export default combineReducers({
   roleStore: roleReducer,
@@ -27,5 +28,6 @@ export default combineReducers({
 
   companyStore:companyReducer,
   projectStore:projectReducer,
+  recruitmentStore:recruitmentReducer,
 
 });

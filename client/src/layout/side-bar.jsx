@@ -18,6 +18,8 @@ const linkArray = [
     subMenu: [
       { subMenuLink: "/recuitmentType", subMenuName: "Recuitment Type" },
       { subMenuLink: "/designation", subMenuName: "Designation" },
+      { subMenuLink: "/recruitment", subMenuName: "Recruitment" },
+      { subMenuLink: "/profile", subMenuName: "Profile" },
     ]
   },
   {
@@ -78,19 +80,19 @@ const linkArray = [
          
     ]
   },
-  {
-    menuName: "Employee",
-    menuLink: "#",
-    icon: "fas fa-address-card mr-3 text-gray",
-    permission: ['HR', 'EMPLOYEE'],
-    subMenu: [
-      { subMenuLink: "/designation", subMenuName: "Designation" },
-      { subMenuLink: "/recruitment", subMenuName: "Recruitment" },
-      { subMenuLink: "/profile", subMenuName: "Profile" },
-      <i class="fas fa-address-card"></i>
+  // {
+  //   menuName: "Employee",
+  //   menuLink: "#",
+  //   icon: "fas fa-address-card mr-3 text-gray",
+  //   permission: ['HR', 'EMPLOYEE'],
+  //   subMenu: [
+  //     { subMenuLink: "/designation", subMenuName: "Designation" },
+  //     { subMenuLink: "/recruitment", subMenuName: "Recruitment" },
+  //     { subMenuLink: "/profile", subMenuName: "Profile" },
+  //     <i class="fas fa-address-card"></i>
 
-    ]
-  },
+  //   ]
+  // },
   {
     menuName: "Settings",
     menuLink: "#",

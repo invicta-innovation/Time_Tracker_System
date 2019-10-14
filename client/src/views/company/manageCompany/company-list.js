@@ -27,7 +27,7 @@ class CompanyList extends Component {
                   <td>{company.telNo}</td>
                   <td>{company.email}</td>
                   <td>{company.address}</td>
-                  <button onClick={()=>this.props.showModal(company)}>edit</button>
+                  <td><button className="btn btn-info btn" onClick={()=>this.props.showModal(company)}>edit</button></td>
                 </tr>
               ))}
               

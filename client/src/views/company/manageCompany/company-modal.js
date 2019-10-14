@@ -56,8 +56,6 @@ class CompanyModal extends Component {
                 onChange={this.handleChange}
                 />
               </Form.Group>
-            </Form.Row>
-              <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
                   <Form.Label> Company Name: </Form.Label>
                   <Form.Control
@@ -67,7 +65,7 @@ class CompanyModal extends Component {
                   onChange={this.handleChange}
                   />
                 </Form.Group>
-              </Form.Row>
+            </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
                   <Form.Label> Tel No : </Form.Label>
@@ -78,8 +76,6 @@ class CompanyModal extends Component {
                   onChange={this.handleChange}
                   />
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
                   <Form.Label> Email : </Form.Label>
                   <Form.Control
