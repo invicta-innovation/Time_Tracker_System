@@ -16,6 +16,18 @@ export default class TaskForm extends Component {
         duration:this.props.task.duration
         })
     }
+    handleSubmit=(obj)=>{
+      this.props.handleSubmit(obj)
+      this.setState({
+        projectName:'',
+        taskName:'',
+        description:'',
+        duration:0.5
+      })
+    }
+    handleChange=(e)=>{
+      this.setState({[e.target.name]:e.target.value})
+    }
     render() {
         return (
             <>
@@ -25,6 +37,7 @@ export default class TaskForm extends Component {
                       type="text"
                       name="projectName"
                       value={this.state.projectName}
+                      onChange={this.handleChange}
                     />
                   </td>
                   <td>
@@ -32,6 +45,7 @@ export default class TaskForm extends Component {
                       type="text"
                       name="taskName"
                       value={this.state.taskName}
+                      onChange={this.handleChange}
                     />
                   </td>
                   <td>
@@ -39,6 +53,7 @@ export default class TaskForm extends Component {
                       type="text"
                       name="description"
                       value={this.state.description}
+                      onChange={this.handleChange}
                     />
                   </td>
                   <td>
@@ -46,13 +61,16 @@ export default class TaskForm extends Component {
                       type="number"
                       name="duration"
                       value={this.state.duration}
+                      onChange={this.handleChange}
                       step={0.5}
                       min={0.5}
                       max={3.5}
                     />
                   </td>
                   <td>
-                    <button onClick={this.props.handleSubmit}>
+                    <button  type="submit"
+              class="btn btn-info " 
+              onClick={()=>this.handleSubmit(this.state)}>
                       Save
                     </button>
                   </td>

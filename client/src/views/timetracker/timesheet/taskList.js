@@ -4,20 +4,23 @@ import TaskForm from "./taskForm";
 import TaskRow from "./taskRow";
 const tasks = [
   {
+    id:1,
     projectName: "leave system",
     taskName: "request leave",
     description: "apply for a leave",
     duration: 3.0
   }
 ];
+const c = 1;
 class DailyTask extends Component {
   state = {
     edit: false,
     isAdd: false
 
   };
-  handleEdit=()=>{
-     this.setState({ edit: true })
+  handleSubmit=(taskObj)=>{
+    tasks.push(taskObj);
+    this.setState({ edit: false })
   }
   render() {
     return (
@@ -36,22 +39,23 @@ class DailyTask extends Component {
               !this.state.edit ? (
                <TaskRow task={task} handleEdit={()=>this.setState({ edit: true })}/>
               ) : (
-                <TaskForm task={task}  handleSubmit={()=>this.setState({ edit: false })}/>
+                <TaskForm task={task}  handleSubmit={this.handleSubmit}/>
               )
             )}
             {!this.state.isAdd ? (
               <tr>
-                <button onClick={() => this.setState({ isAdd: true })}>
+                <button 
+                 type="submit"
+                 class="btn btn-info "
+                onClick={() => this.setState({ isAdd: true })}>
                   Add
                 </button>
               </tr>
             ) : (
-              <TaskForm task={{}}  handleSubmit={()=>this.setState({ isAdd: false })}/>              
+              <TaskForm task={{}}  handleSubmit={(obj)=>this.handleSubmit(obj)}/>              
             )}
           </tbody>
         </Table>
-        <a>{this.props.selectedDate}</a>
-        <button onClick={this.props.handleClose}>close</button>
       </div>
     );
   }

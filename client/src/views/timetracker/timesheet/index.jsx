@@ -47,6 +47,16 @@ class TimeSheet extends Component {
       <Modal.Body>
         <DailyTask selectedDate={this.state.selectedDate} handleClose={this.handleClose}/>
       </Modal.Body>
+      <Modal.Footer>
+          <button
+            type="submit"
+            class="btn btn-danger "
+            onClick={this.handleClose}
+          >
+            Close
+          </button>
+            
+        </Modal.Footer>
     </Modal>
       <div className="col-sm-8">
         <section class="py-3">

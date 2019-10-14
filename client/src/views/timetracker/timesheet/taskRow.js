@@ -11,7 +11,10 @@ export default class TaskRow extends Component {
           <td>{task.description}</td>
           <td>{task.duration}</td>
           <td>
-            <button onClick={this.props.handleEdit}>Edit</button>
+            <button 
+             type="submit"
+              class="btn btn-info " 
+              onClick={this.props.handleEdit}>Edit</button>
           </td>
         </tr>
       </>
