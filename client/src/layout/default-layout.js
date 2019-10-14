@@ -82,40 +82,16 @@ export class DefaultLayout extends Component {
                 <Route path="/requestLeave" component={RequestLeave} />
                 <Route path="/leaveHistory" component={LeaveHistory} />
                 <Route path="/lieuLeave" component={LieuLeave} />
-                <Route
-                  path="/manageLeaveDashboard"
-                  component={ManageLeaveDashBoard}
-                />
-                <Route
-                  path="/manageLeaveRequests"
-                  component={ManageProcessLeave}
-                />
-                <Route
-                  path="/manageLeaveLeiuLeave"
-                  component={ManageLeaveLieu}
-                />
-                <Route
-                  path="/manageCarryForward"
-                  component={ManageCarryforward}
-                />
-                <Route
-                  path="/configurecalendar"
-                  component={ConfigureCalendar}
-                />
+                <Route path="/manageLeaveDashboard" component={ManageLeaveDashBoard} />
+                <Route path="/manageLeaveRequests" component={ManageProcessLeave}/>
+                <Route path="/manageLeaveLeiuLeave" component={ManageLeaveLieu}/>
+                <Route path="/manageCarryForward"  component={ManageCarryforward}/>
+                <Route path="/configurecalendar" component={ConfigureCalendar} />
                 <Route path="/manageRole" component={Role} />
                 <Route path="/manageUser" component={Users} />
-                <Route
-                  path="/configleave"
-                  component={ManageLeaveTypesAndPolicies}
-                />
-                <Route
-                  path="/indivitualLeaveHistory"
-                  component={ManageIndivitualLeaveHistory}
-                />
-                <Route
-                  path="/leaveAllocation"
-                  component={ManageLeaveAllocation}
-                />
+                <Route path="/configleave" component={ManageLeaveTypesAndPolicies} />
+                <Route path="/indivitualLeaveHistory" component={ManageIndivitualLeaveHistory} />
+                <Route path="/leaveAllocation" component={ManageLeaveAllocation} />
                 <Route path="/manageAllocation/:id" component={Allocation} />
                 <Route path="/recuitmentType" component={RecuitmentType} />
                 <Route path="/designation" component={ManageDesignation} />
