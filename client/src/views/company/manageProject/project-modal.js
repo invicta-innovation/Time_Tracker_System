@@ -59,8 +59,6 @@ class ProjectModal extends Component {
                 onChange={this.handleChange}
                 />
               </Form.Group>
-            </Form.Row>
-              <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
                   <Form.Label> Project Name: </Form.Label>
                   <Form.Control
@@ -70,47 +68,45 @@ class ProjectModal extends Component {
                   onChange={this.handleChange}
                   />
                 </Form.Group>
-              </Form.Row>
+            </Form.Row>
+              
               <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
                   <Form.Label> Started Date: </Form.Label>
                   <Form.Control
                   value={this.state.startedDate} 
-                  type="text" 
+                  type="date" 
                   name="startedDate"
                   onChange={this.handleChange}
                   />
                 </Form.Group>
-              </Form.Row>
-              <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
                   <Form.Label> Finished Date: </Form.Label>
                   <Form.Control
                   value={this.state.finishedDate} 
-                  type="text" 
+                  type="date" 
                   name="finishedDate"
                   onChange={this.handleChange}
                   />
                 </Form.Group>
               </Form.Row>
+              
               <Form.Row>
+              <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
+                  <Form.Label> Project Status: </Form.Label>
+                  <Form.Control
+                  value={this.state.projectStatus} 
+                  type="text" 
+                  name="projectStatus"
+                  onChange={this.handleChange}
+                  />
+                </Form.Group>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
                   <Form.Label> Description: </Form.Label>
                   <Form.Control
                   value={this.state.description} 
                   type="text" 
                   name="description"
-                  onChange={this.handleChange}
-                  />
-                </Form.Group>
-              </Form.Row>
-              <Form.Row>
-                <Form.Group as={Col} controlId="exampleForm.ControlTextarea2">
-                  <Form.Label> Project Status: </Form.Label>
-                  <Form.Control
-                  value={this.state.projectStatus} 
-                  type="text" 
-                  name="projectStatus"
                   onChange={this.handleChange}
                   />
                 </Form.Group>

@@ -30,7 +30,7 @@ class ProjectList extends Component {
                   <td>{project.description}</td>
                   <td>{project.projectStatus}</td>
 
-                  <button onClick={()=>this.props.showModal(project)}>edit</button>
+                  <td><button className="btn btn-info btn" onClick={()=>this.props.showModal(project)}>edit</button></td>
                 </tr>
               ))}
               
