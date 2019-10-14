@@ -20,7 +20,7 @@ class App extends Component {
     return (
            <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/leave" component={DefaultLayout} />
+            <Route path="/" component={DefaultLayout} />
             {/* <Route path="/login" component={Login} /> */}
           </Switch>
     );

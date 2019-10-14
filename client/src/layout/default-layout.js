@@ -35,7 +35,7 @@ import WorkflowMain from '../views/leave-system/leave-workflow/workflow-main';
 
 import Company from "../views/company/manageCompany/company";
 import Project from "../views/company/manageProject/project";
-import TimeSheet from "../views/timetracker/timesheet/timeSheet";
+import TimeSheet from "../views/timetracker/timesheet";
 import Profile from "../views/employee/profile/profile";
 import Designation from '../views/leave-system/manage-designation/designation';
 // import RecuitmentType from '../views/employee/recuitment-type/index';
@@ -102,6 +102,7 @@ export class DefaultLayout extends Component {
                 <Route path='/timeSheet' component={TimeSheet}/>
                 <Route path='/profile' component={Profile}/>
                 <Route path='/designation' component={Designation}/>
+                
                 {/* {this.renderLogin()} */}
              </Switch>
            
