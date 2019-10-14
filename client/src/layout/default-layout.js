@@ -32,7 +32,6 @@ import authService from "../_utils/auth-service";
 import Allocation from '../views/leave-system/leave-allocation/Allocation';
 import ModalCalendar from '../views/leave-system/leave-request/ModalCalendar';
 import WorkflowMain from '../views/leave-system/leave-workflow/workflow-main';
-import Card from '../commons/card';
 
 import Company from "../views/company/manageCompany/company";
 import Project from "../views/company/manageProject/project";
@@ -98,13 +97,12 @@ export class DefaultLayout extends Component {
                 <Route  path="/recuitmentType" component={RecuitmentType} />
                 <Route  path="/designation" component={ManageDesignation} />
                 <Route  path="/workflow/:id" component={WorkflowMain} />
-
                 <Route path='/company' component={Company}/>
                 <Route path='/project' component={Project}/>
                 <Route path='/timeSheet' component={TimeSheet}/>
                 <Route path='/profile' component={Profile}/>
                 <Route path='/designation' component={Designation}/>
-                {this.renderLogin()}
+                {/* {this.renderLogin()} */}
              </Switch>
            
             </div>
