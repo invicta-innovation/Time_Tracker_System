@@ -11,4 +11,6 @@ export class RecruitmentTypesController {
     async getRecruitmentTypes():Promise<RecruitmentTypeDto[]>{
         return await this.recruitmentService.findAllRecruitmentTypes();
     }
+    // @Get(':id')
+
 }

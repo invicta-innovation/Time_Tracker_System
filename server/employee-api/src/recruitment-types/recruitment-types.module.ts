@@ -5,7 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { RecruitmentTypeEntity } from './recruitment-type.entity';
 
 @Module({
-  imports:[TypeOrmModule.forFeature([RecruitmentTypeEntity])],
+  imports:[
+    TypeOrmModule.forFeature([RecruitmentTypeEntity])
+  ],
   controllers: [RecruitmentTypesController],
   providers: [RecruitmentTypesService]
 })
