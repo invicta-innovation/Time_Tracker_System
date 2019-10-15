@@ -18,8 +18,16 @@ class DailyTask extends Component {
     isAdd: false
 
   };
-  handleSubmit=(taskObj)=>{
+  handlePush=(taskObj)=>{
     tasks.push(taskObj);
+    this.setState({ isAdd: false })
+  }
+  handleSubmit=(taskObj)=>{
+    tasks.map(task=>{
+      if(task.id===taskObj.id){
+        return taskObj
+      }
+    })
     this.setState({ edit: false })
   }
   render() {
@@ -37,9 +45,9 @@ class DailyTask extends Component {
           <tbody>
             {tasks.map(task =>
               !this.state.edit ? (
-               <TaskRow task={task} handleEdit={()=>this.setState({ edit: true })}/>
-              ) : (
-                <TaskForm task={task}  handleSubmit={this.handleSubmit}/>
+               <TaskRow task={task} handleEdit={()=>this.setState({ edit: true })} key={task.id}/>
+              ) :  ( 
+                <TaskForm task={task}  handleSubmit={(obj)=>this.handleSubmit(obj)} key={task.id}/>
               )
             )}
             {!this.state.isAdd ? (
@@ -52,7 +60,7 @@ class DailyTask extends Component {
                 </button>
               </tr>
             ) : (
-              <TaskForm task={{}}  handleSubmit={(obj)=>this.handleSubmit(obj)}/>              
+              <TaskForm task={{}}  handleSubmit={(obj)=>this.handlePush(obj)}/>              
             )}
           </tbody>
         </Table>
