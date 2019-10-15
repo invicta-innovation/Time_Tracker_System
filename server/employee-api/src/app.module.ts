@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { RecruitmentTypesModule } from './recruitment-types/recruitment-types.module';
 import config from "./config/config"
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [RecruitmentTypesModule,config]
 })
 export class AppModule {}
