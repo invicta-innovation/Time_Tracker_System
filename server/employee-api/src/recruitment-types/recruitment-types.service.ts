@@ -11,10 +11,12 @@ export class RecruitmentTypesService {
         @InjectRepository(RecruitmentTypeEntity)
         private readonly recruitmentTypeRepository:RecruitmentTypeRepository
     ){}
+    createRecruitment(){
+        // return this.recruitmentTypeRepository.save()
+    }
 
     findAllRecruitmentTypes(): Promise<RecruitmentTypeDto[]>{
         return this.recruitmentTypeRepository.find();
     }
-    // createRecruitment()
 
 }
