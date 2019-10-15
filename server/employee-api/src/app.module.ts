@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
-import { RecruitmentTypesModule } from './recruitment-types/recruitment-types.module';
 import config from "./config/config"
 
+import { RecruitmentTypesModule } from './recruitment-types/recruitment-types.module';
+import { DesignationModule } from './designation/designation.module';
+
 @Module({
-  imports: [config,RecruitmentTypesModule]
+  imports: [RecruitmentTypesModule,config, DesignationModule]
 })
 export class AppModule {}
