@@ -1,2 +1,105 @@
 client/node_modules
 server/node_modules
+# client/abc.txt
+# #############################################################################################
+server/time-tracker-api/dist
+server/time-tracker-api/node_modules
+
+server/time-tracker-api/logs
+server/time-tracker-api/*.log
+server/time-tracker-api/npm-debug.log*
+server/time-tracker-api/yarn-debug.log*
+server/time-tracker-api/yarn-error.log*
+server/time-tracker-api/lerna-debug.log*
+
+# OS
+server/time-tracker-api/.DS_Store
+
+# Tests
+server/time-tracker-api/coverage
+server/time-tracker-api/.nyc_output
+
+# IDEs and editors
+server/time-tracker-api/.idea
+server/time-tracker-api/.project
+server/time-tracker-api/.classpath
+server/time-tracker-api/.c9/
+server/time-tracker-api/*.launch
+server/time-tracker-api/.settings/
+server/time-tracker-api/*.sublime-workspace
+
+# IDE - VSCode
+server/time-tracker-api/.vscode/*
+server/time-tracker-api/!.vscode/settings.json
+server/time-tracker-api/!.vscode/tasks.json
+server/time-tracker-api/!.vscode/launch.json
+server/time-tracker-api/!.vscode/extensions.json
+
+# #############################################################################################
+server/employee-api/dist
+server/employee-api/node_modules
+
+server/employee-api/logs
+server/employee-api/*.log
+server/employee-api/npm-debug.log*
+server/employee-api/yarn-debug.log*
+server/employee-api/yarn-error.log*
+server/employee-api/lerna-debug.log*
+
+# OS
+server/employee-api/.DS_Store
+
+# Tests
+server/employee-api/coverage
+server/employee-api/.nyc_output
+
+# IDEs and editors
+server/employee-api/.idea
+server/employee-api/.project
+server/employee-api/.classpath
+server/employee-api/.c9/
+server/employee-api/*.launch
+server/employee-api/.settings/
+server/employee-api/*.sublime-workspace
+
+# IDE - VSCode
+server/employee-api/.vscode/*
+server/employee-api/!.vscode/settings.json
+server/employee-api/!.vscode/tasks.json
+server/employee-api/!.vscode/launch.json
+server/employee-api/!.vscode/extensions.json
+
+# #############################################################################################
+server/company-api/dist
+server/company-api/node_modules
+
+server/company-api/logs
+server/company-api/*.log
+server/company-api/npm-debug.log*
+server/company-api/yarn-debug.log*
+server/company-api/yarn-error.log*
+server/company-api/lerna-debug.log*
+
+# OS
+server/company-api/.DS_Store
+
+# Tests
+server/company-api/coverage
+server/company-api/.nyc_output
+
+# IDEs and editors
+server/company-api/.idea
+server/company-api/.project
+server/company-api/.classpath
+server/company-api/.c9/
+server/company-api/*.launch
+server/company-api/.settings/
+server/company-api/*.sublime-workspace
+
+# IDE - VSCode
+server/company-api/.vscode/*
+server/company-api/!.vscode/settings.json
+server/company-api/!.vscode/tasks.json
+server/company-api/!.vscode/launch.json
+server/company-api/!.vscode/extensions.json
+# #############################################################################################

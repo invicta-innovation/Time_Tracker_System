@@ -4,7 +4,7 @@ import leaveHistoryReducer from "./leave-history-reducer";
 import leaveReducer from "./leave-reducer";
 import userReducer from "./user-reducer";
 import leaveTypeReducer from'./leaveType-reducer';
-import recuitmentTypeReducer from './recuitment-type-reducer';
+import recuritmentTypeReducer from './recuitment-type-reducer';
 import designationReducer from './designation-reducer';
 import lieuLeaveReducer from'./lieuLeaveRequest-reducer';
 import {authReducer} from'./auth-reducer';
@@ -19,7 +19,7 @@ export default combineReducers({
   // leave: leaveHistoryReducer,
   userStore:userReducer,
   leaveTypeStore: leaveTypeReducer,
-  recuitmentTypeStore: recuitmentTypeReducer,
+  recuitmentTypeStore: recuritmentTypeReducer,
   designationStore:designationReducer,
   leaveStore: leaveReducer,
   lieuLeaveRequestStore:lieuLeaveReducer,
