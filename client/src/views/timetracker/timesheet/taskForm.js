@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Table } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 export default class TaskForm extends Component {
   state = {

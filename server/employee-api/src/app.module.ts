@@ -3,6 +3,6 @@ import { RecruitmentTypesModule } from './recruitment-types/recruitment-types.mo
 import config from "./config/config"
 
 @Module({
-  imports: [RecruitmentTypesModule,config]
+  imports: [config,RecruitmentTypesModule]
 })
 export class AppModule {}
