@@ -4,7 +4,7 @@ import TaskForm from "./taskForm";
 import TaskRow from "./taskRow";
 const tasks = [
   {
-    id:1,
+    id: 1,
     projectName: "leave system",
     taskName: "request leave",
     description: "apply for a leave",
@@ -16,20 +16,19 @@ class DailyTask extends Component {
   state = {
     edit: false,
     isAdd: false
-
   };
-  handlePush=(taskObj)=>{
+  handlePush = taskObj => {
     tasks.push(taskObj);
-    this.setState({ isAdd: false })
-  }
-  handleSubmit=(taskObj)=>{
-    tasks.map(task=>{
-      if(task.id===taskObj.id){
-        return taskObj
+    this.setState({ isAdd: false });
+  };
+  handleSubmit = taskObj => {
+    tasks.map(task => {
+      if (task.id === taskObj.id) {
+        return taskObj;
       }
-    })
-    this.setState({ edit: false })
-  }
+    });
+    this.setState({ edit: false });
+  };
   render() {
     return (
       <div>
@@ -44,23 +43,32 @@ class DailyTask extends Component {
           </thead>
           <tbody>
             {tasks.map(task =>
-              !this.state.edit ? (
-               <TaskRow task={task} handleEdit={()=>this.setState({ edit: true })} key={task.id}/>
-              ) :  ( 
-                <TaskForm task={task}  handleSubmit={(obj)=>this.handleSubmit(obj)} key={task.id}/>
+              (!this.state.edit) ? (
+                <TaskRow
+                  key={task.id}
+                  task={task}
+                  handleEdit={() => this.setState({ edit: true })}
+                />
+              ) : (
+                <TaskForm
+                  key={task.id}
+                  task={task}
+                  handleSubmit={obj => this.handleSubmit(obj)}
+                />
               )
             )}
             {!this.state.isAdd ? (
-              <tr>
-                <button 
-                 type="submit"
-                 class="btn btn-info "
-                onClick={() => this.setState({ isAdd: true })}>
-                  Add
-                </button>
-              </tr>
+              // <tr>
+              <button
+                type="submit"
+                class="btn btn-info "
+                onClick={() => this.setState({ isAdd: true })}
+              >
+                Add
+              </button>
             ) : (
-              <TaskForm task={{}}  handleSubmit={(obj)=>this.handlePush(obj)}/>              
+              // </tr>
+              <TaskForm task={{}} handleSubmit={obj => this.handlePush(obj)} />
             )}
           </tbody>
         </Table>
