@@ -11,13 +11,25 @@ export class DesignationService {
             private readonly designationRepository:DesignationRepository
         ){}
     
-        findAllDesignationTypes(): Promise<DesignationDto[]>{
+        findAllDesignationTypes(): Promise<DesignationDto[]> {
             return this.designationRepository.find();
         }
 
-        findById(id): Promise<DesignationDto>{
+        findById(id): Promise<DesignationDto> {
             return this.designationRepository.findOne(id);
         }
 
-         
+        createDesignation(designationDto:DesignationDto):  Promise<DesignationDto> {
+             return this.designationRepository.save(designationDto);
+        }
+
+        deleteDesignation(id): Promise<any> {
+             return this.designationRepository.delete(id);
+        }
+
+        updateDesignation(id, designationDto: DesignationDto): Promise<any>{
+            return this.designationRepository.update(id, designationDto);
+        }
+
+
 }

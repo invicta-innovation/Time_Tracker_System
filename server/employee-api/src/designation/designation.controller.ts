@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { DesignationDto } from './designation.dto';
 import { DesignationService } from './designation.service';
 
@@ -6,7 +6,7 @@ import { DesignationService } from './designation.service';
 export class DesignationController {
     constructor(
         private readonly designationService: DesignationService,
-    ){}
+    ) { }
 
     @Get()
     async findAll(): Promise<DesignationDto[]> {
@@ -21,8 +21,18 @@ export class DesignationController {
     }
 
     @Post()
-    createDesignation(@Body() designationDto: DesignationDto): string {
-        return `Age: ${designationDto.designation}`;
+    async createDesignation(@Body() designationDto: DesignationDto): Promise<DesignationDto> {
+        return await this.designationService.createDesignation(designationDto);
+    }
+
+    @Delete(':id')
+    async deleteDesignation(@Param('id') id): Promise<any>{
+        return await this.designationService.deleteDesignation(id);
+    }
+
+    @Put(':id')
+    async updateDesignation(@Param('id') id, @Body() designationDto: DesignationDto): Promise<any>{
+        return await this.designationService.updateDesignation(id, designationDto);
     }
 
 }

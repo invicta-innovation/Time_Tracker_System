@@ -6,7 +6,7 @@ import { DesignationEntity } from './designation.entity';
 
 @Module({
     imports: [TypeOrmModule.forFeature([
-        DesignationEntity,
+        DesignationEntity
         ]
     )],
     providers: [DesignationService],

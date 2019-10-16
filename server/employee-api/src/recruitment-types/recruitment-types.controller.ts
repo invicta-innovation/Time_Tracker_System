@@ -10,11 +10,11 @@ export class RecruitmentTypesController {
         return await this.recruitmentService.findAllRecruitmentTypes();
     }
 
-    @Post() async createRecruitmentType(@Body() recruitmentTypeDto:RecruitmentTypeDto):Promise<RecruitmentTypeDto > {
+    @Post() async createRecruitmentType(@Body() recruitmentTypeDto: RecruitmentTypeDto): Promise<RecruitmentTypeDto> {
         return await this.recruitmentService.createRecruitment(recruitmentTypeDto);
     }
 
-    @Get(':id') async findRecruitmentType(@Param('id') id):Promise<RecruitmentTypeDto > {
+    @Get(':id') async findRecruitmentType(@Param('id') id): Promise<RecruitmentTypeDto> {
         return await this.recruitmentService.findById(id);
     }
 
