@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import { Modal, Form, Col } from "react-bootstrap";
 import { connect } from "react-redux";
-import {
-  addRecuitmentType,
-  updateRecuitmentType,
-  showModal
-} from "../../../_actions/employee/recuitment-type-action";
+import {addRecuitmentType, updateRecuitmentType, showModal} 
+from "../../../_actions/employee/recuitment-type-action";
 import { RECUITMENT_MIN_LENGTH, RECUITMENT_MAX_LENGTH } from "../../../_constants";
 import swal from 'sweetalert';
-import Axios from "axios";
 
 class RecuitmentTypeModel extends Component {
     state = {
@@ -25,27 +21,21 @@ class RecuitmentTypeModel extends Component {
   };
 
   handleSubmit =()=> {
+    const{action} =this.state;
     let recuitmentTypeObj ={
-          // id:this.state.id,
-          typeName:this.state.typeName
-        }
-    this.props.addRecuitmentType(recuitmentTypeObj);
-  
-  //   const{action} =this.state;
-  //   let recuitmentTypeObj ={
-  //     id:this.state.id,
-  //     typeName:this.state.typeName
-  //   }
-  //   this.checkEmptySpace();
+      // id:this.state.id,
+      typeName:this.state.typeName
+    }
+    this.checkEmptySpace();
     
-  //   if (this.isEmpty(this.state.errors)) {
-  //   if (action== "ADD") {
-  //     this.props.addRecuitmentType(recuitmentTypeObj);
-  //     }
-  //    else if (action == "EDIT") {
-  //     this.props.updateRecuitmentType(recuitmentTypeObj);
-  //   }
-  // }
+    if (this.isEmpty(this.state.errors)) {
+    if (action== "ADD") {
+      this.props.addRecuitmentType(recuitmentTypeObj);
+      }
+     else if (action == "EDIT") {
+      // this.props.updateRecuitmentType(recuitmentTypeObj);
+    }
+  }
   };
 
   isEmpty = (obj) => {
@@ -180,7 +170,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onModalShow: (showstatus) => dispatch(showModal({ action: "ADD", show: showstatus, title: "Add Recuitment Type" })),
     addRecuitmentType: obj => dispatch(addRecuitmentType(obj)),
-    updateRecuitmentType: obj => dispatch(updateRecuitmentType(obj))
+    // updateRecuitmentType: obj => dispatch(updateRecuitmentType(obj))
   };
 };
 

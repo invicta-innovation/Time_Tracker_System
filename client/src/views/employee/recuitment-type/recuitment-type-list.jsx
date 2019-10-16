@@ -3,8 +3,6 @@ import { Table } from "react-bootstrap";
 import { connect } from "react-redux";
 import { fetchRecuitmentType, showModal, deleteRecuitmentType } from "../../../_actions/employee/recuitment-type-action";
 import swal from 'sweetalert';
-import Axios from 'axios';
-import { API_EMPLOYEE_BASE_URL } from '../../../_constants';
 
 class RecuitmentTypeList extends Component {
   constructor(props) {
@@ -61,7 +59,7 @@ componentWillMount(){
                   data-toggle="tooltip"
                   data-placement="bottom"
                 title="Edit"
-                onClick={()=>this.props.onModalShow(recuitmentType.id)}
+                // onClick={()=>this.props.onModalShow(recuitmentType.id)}
                 >
                   <i class="fas fa-pen-fancy"/>
                 </button>
