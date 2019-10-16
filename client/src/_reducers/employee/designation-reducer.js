@@ -5,7 +5,7 @@ import {
   UPDATE_DESIGNATION,
   SHOW_MODAL_DESIGNATION,
   SHOW_ERROR_MESSAGE
-} from "../_constants/types";
+} from "../../_constants/types";
 
 const initialState = {
   modaldata: {},
