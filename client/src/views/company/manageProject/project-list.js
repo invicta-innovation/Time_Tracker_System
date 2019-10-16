@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {showModal,fetchProject} from '../../../_actions/project-action';
+import {showModal,fetchProject} from '../../../_actions/company/project-action';
 
 class ProjectList extends Component {
     componentWillMount(){

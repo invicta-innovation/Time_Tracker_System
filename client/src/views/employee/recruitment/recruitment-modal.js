@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ADD_RECRUITMENT, UPDATE_RECRUITMENT } from "../../../_constants/types";
 import { Modal, Form, Col } from "react-bootstrap";
-import { showModal } from "../../../_actions/recruitment-action";
+import { showModal } from "../../../_actions/employee/recruitment-action";
 
 class RecruitmentModal extends Component {
   state = {

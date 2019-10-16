@@ -1,4 +1,4 @@
-import {GET_RECRUITMENT,SHOW_MODAL_RECRUITMENT} from '../_constants/types'
+import {GET_RECRUITMENT,SHOW_MODAL_RECRUITMENT} from '../../_constants/types'
 
 export const fetchRecruitment= () => dispatch =>{
     dispatch({

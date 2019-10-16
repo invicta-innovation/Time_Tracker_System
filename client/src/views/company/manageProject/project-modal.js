@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { UPDATE_PROJECT, ADD_PROJECT } from '../../../_constants/types';
 import { connect } from 'react-redux';
 import {Modal,Form,Col} from "react-bootstrap";
-import {showModal} from '../../../_actions/project-action';
+import {showModal} from '../../../_actions/company/project-action';
 
 class ProjectModal extends Component {
     state={

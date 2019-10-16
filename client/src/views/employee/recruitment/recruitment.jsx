@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RecruitmentModal from './recruitment-modal';
 import RecruitmentList from './recruitment-list';
-import {showModal} from '../../../_actions/recruitment-action';
+import {showModal} from '../../../_actions/employee/recruitment-action';
 
 class Recruitment extends Component {
     render() {

@@ -1,4 +1,4 @@
-import {GET_PROJECT,SHOW_MODAL_PROJECT} from '../_constants/types'
+import {GET_PROJECT,SHOW_MODAL_PROJECT} from '../../_constants/types'
 
 export const fetchProject= () => dispatch =>{
     dispatch({
