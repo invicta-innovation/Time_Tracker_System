@@ -1,16 +1,27 @@
-import { Controller, Get, Req, Res, Post, Body, } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { DesignationDto } from './designation.dto';
+import { DesignationService } from './designation.service';
 
 @Controller('designation')
 export class DesignationController {
+    constructor(
+        private readonly designationService: DesignationService,
+    ){}
+
     @Get()
-    findAll(@Req() req: Request, @Res() res: Response) {
-        // return 'Please Replace this with something'
-        console.log(req.url)
+    async findAll(): Promise<DesignationDto[]> {
+        return await this.designationService.findAllDesignationTypes();
+        //console.log(req.url)
+    }
+
+    @Get(':id')
+    async findById(@Param('id') id): Promise<DesignationDto> {
+        return await this.designationService.findById(id);
+        //console.log(req.url)
     }
 
     @Post()
-    create(@Body() designationDto: DesignationDto): string {
+    createDesignation(@Body() designationDto: DesignationDto): string {
         return `Age: ${designationDto.designation}`;
     }
 
