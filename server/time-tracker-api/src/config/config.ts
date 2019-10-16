@@ -6,8 +6,8 @@ const config= TypeOrmModule.forRoot({
   port: 5432,
   username: 'postgres',
   password: 'root',
-  schema: 'public',
-  database: 'timetracker',
+  schema: 'time_tracker',
+  database: 'time_tracker_system',
   entities: ['src/**/*.entity{.ts,.js}'],
   synchronize: true,
 })

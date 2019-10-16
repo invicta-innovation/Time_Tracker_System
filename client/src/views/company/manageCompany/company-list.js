@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {showModal,fetchCompany} from '../../../_actions/company/company-action';
-
+import axios from 'axios';
 class CompanyList extends Component {
     componentWillMount(){
         this.props.getCompanies();
       }
+     
     render() {
         return (
             <div>

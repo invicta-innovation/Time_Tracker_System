@@ -5,7 +5,5 @@ import config from "./config/config";
 
 @Module({
   imports: [CompanyModule,ProjectsModule,config],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
