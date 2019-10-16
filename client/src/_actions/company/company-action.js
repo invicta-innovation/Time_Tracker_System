@@ -1,4 +1,4 @@
-import {GET_COMPANY,SHOW_MODAL_COMPANY} from '../_constants/types'
+import {GET_COMPANY,SHOW_MODAL_COMPANY} from '../../_constants/types'
 
 export const fetchCompany= () => dispatch =>{
     dispatch({

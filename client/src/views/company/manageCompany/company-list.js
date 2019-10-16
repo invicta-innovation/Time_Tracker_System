@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {showModal,fetchCompany} from '../../../_actions/company-action';
+import {showModal,fetchCompany} from '../../../_actions/company/company-action';
 
 class CompanyList extends Component {
     componentWillMount(){

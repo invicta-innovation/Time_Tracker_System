@@ -1,24 +1,12 @@
-import {
-    Controller, Get, Post, Body, Param, Put, Delete
-}
-    from '@nestjs/common';
-import {
-    RecruitmentTypeDto
-}
-    from './recruitment-type.dto';
-import {
-    RecruitmentTypesService
-}
-    from './recruitment-types.service';
+import { Controller, Get, Post, Body, Param, Put, Delete} from '@nestjs/common';
+import { RecruitmentTypeDto} from './recruitment-type.dto';
+import { RecruitmentTypesService} from './recruitment-types.service';
 
-@Controller('recruitment-types')
+@Controller('employee/recruitment-types') 
 export class RecruitmentTypesController {
-    constructor(
-        private readonly recruitmentService: RecruitmentTypesService
-    ) { }
-
-    @Get()
-    async getRecruitmentTypes(): Promise<RecruitmentTypeDto[]> {
+    constructor(private readonly recruitmentService:RecruitmentTypesService) {}
+    
+    @Get() async getRecruitmentTypes():Promise<RecruitmentTypeDto[] > {
         return await this.recruitmentService.findAllRecruitmentTypes();
     }
 
@@ -30,14 +18,11 @@ export class RecruitmentTypesController {
         return await this.recruitmentService.findById(id);
     }
 
-    @Put(':id')
-    async updateRecruitmentType(@Param('id') id,
-        @Body() recruitmentTypeDto: RecruitmentTypeDto): Promise<any> {
-        return await this.recruitmentService.updateById(id, recruitmentTypeDto);
+    @Put(':id') async updateRecruitmentType(@Param('id') id , @Body() recruitmentTypeDto:RecruitmentTypeDto):Promise<any > {
+        return await this.recruitmentService.updateById(id,recruitmentTypeDto);
     }
 
-    @Delete(':id')
-    async deleteRecruitmentType(@Param('id') id): Promise<any> {
+    @Delete(':id') async deleteRecruitmentType(@Param('id') id):Promise<any > {
         return await this.recruitmentService.deleteById(id);
     }
 }

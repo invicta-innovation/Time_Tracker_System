@@ -1,40 +1,40 @@
-import {GET_PROJECT,ADD_PROJECT,SHOW_MODAL_PROJECT,UPDATE_PROJECT} from '../_constants/types'
+import {GET_RECRUITMENT,ADD_RECRUITMENT,SHOW_MODAL_RECRUITMENT,UPDATE_RECRUITMENT} from '../../_constants/types'
 const initialState = {
-    projects:[],
+    recruitments:[],
     modaldata:{},
-    project:{}
+    recruitment:{}
   };
   
   export default function(state = initialState, action) {
     switch (action.type) {
-      case GET_PROJECT:
+      case GET_RECRUITMENT:
         return {
           ...state,
-          projects:action.payload
+          recruitments:action.payload
         };
-      case ADD_PROJECT:
+      case ADD_RECRUITMENT:
         return {
           ...state,
-          projects:state.projects.concat(action.payload),
+          recruitments:state.recruitments.concat(action.payload),
           modaldata:{show:false}
         };
-        case UPDATE_PROJECT:
+        case UPDATE_RECRUITMENT:
         return {
           ...state,
-          projects:state.projects.map(project=>{
-            if(project.id===action.payload.id) 
+          recruitments:state.recruitments.map(recruitment=>{
+            if(recruitment.id===action.payload.id) 
             {
             return action.payload;
             }else{
-              return project;
+              return recruitment;
             }}),
           modaldata:{show:false}
         };
-        case SHOW_MODAL_PROJECT:
+        case SHOW_MODAL_RECRUITMENT:
             return {
               ...state,
               modaldata:action.modaldata,
-              project:action.payload
+              recruitment:action.payload
             };
       default:
         return state;

@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
 import { Table } from "react-bootstrap";
 import { connect } from "react-redux";
-import { fetchRecuitmentType, showModal, deleteRecuitmentType } from "../../../_actions/recuitment-type-action";
+import { fetchRecuitmentType, showModal, deleteRecuitmentType } from "../../../_actions/employee/recuitment-type-action";
 import swal from 'sweetalert';
+import Axios from 'axios';
+import { API_EMPLOYEE_BASE_URL } from '../../../_constants';
 
 class RecuitmentTypeList extends Component {
   constructor(props) {
     super(props);
   }
+componentWillMount(){
 
+  this.props.fetchRecuitmentType();
+}
   componentDidMount() {
-    this.props.fetchRecuitmentType();
-   // console.log(this.props);
+
+    // Axios.get(`${API_EMPLOYEE_BASE_URL}/recruitment-types`).then(res=>console.log(res.data))
+   console.log(this.props.recuitmentTypes);
   }
   handleDelete =(id)=>{
     swal({
@@ -45,7 +51,7 @@ class RecuitmentTypeList extends Component {
         <tbody>
         {this.props.recuitmentTypes.map(recuitmentType => (
             <tr key={recuitmentType.id}>
-              <td>{recuitmentType.recuitmentTypeName}</td>
+              <td>{recuitmentType.typeName}</td>
               <td>
                 {" "}
                 &nbsp; &nbsp;

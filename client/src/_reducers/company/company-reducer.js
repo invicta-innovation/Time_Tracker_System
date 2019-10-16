@@ -1,4 +1,4 @@
-import {GET_COMPANY,ADD_COMPANY,SHOW_MODAL_COMPANY,UPDATE_COMPANY} from '../_constants/types'
+import {GET_COMPANY,ADD_COMPANY,SHOW_MODAL_COMPANY,UPDATE_COMPANY} from '../../_constants/types'
 const initialState = {
     companies:[],
     modaldata:{},

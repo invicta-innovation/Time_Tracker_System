@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import RecuitmentTypeModal from './recuitment-type-modal';
 import RecuitmentTypeList from './recuitment-type-list';
 import { connect } from 'react-redux';
-import { showModal } from '../../../_actions/recuitment-type-action';
+import { showModal } from '../../../_actions/employee/recuitment-type-action';
 
 class RecuitmentType extends Component {
 	constructor(props) {

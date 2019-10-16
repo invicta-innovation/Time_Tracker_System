@@ -4,15 +4,15 @@ import leaveHistoryReducer from "./leave-history-reducer";
 import leaveReducer from "./leave-reducer";
 import userReducer from "./user-reducer";
 import leaveTypeReducer from'./leaveType-reducer';
-import recuritmentTypeReducer from './recuitment-type-reducer';
-import designationReducer from './designation-reducer';
+import recuritmentTypeReducer from './employee/recuitment-type-reducer';
+import designationReducer from './employee/designation-reducer';
 import lieuLeaveReducer from'./lieuLeaveRequest-reducer';
 import {authReducer} from'./auth-reducer';
 import leaveAllocationReducer from "./leave-allocation-reducer";
 
-import companyReducer from "./company-reducer";
-import projectReducer from "./project-reducer";
-import recruitmentReducer from "./recruitment-reducer";
+import companyReducer from "./company/company-reducer";
+import projectReducer from "./company/project-reducer";
+import recruitmentReducer from "./employee/recruitment-reducer";
 
 export default combineReducers({
   roleStore: roleReducer,

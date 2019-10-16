@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProjectModal from './project-modal';
 import ProjectList from './project-list';
-import {showModal} from '../../../_actions/project-action';
+import {showModal} from '../../../_actions/company/project-action';
 
 class Project extends Component {
     render() {

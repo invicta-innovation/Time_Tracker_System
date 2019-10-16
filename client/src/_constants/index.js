@@ -1,4 +1,5 @@
 export const API_BASE_URL='http://localhost:8040/leave_system';
+export const API_EMPLOYEE_BASE_URL='http://localhost:4001/employee';
 
 // validation things below here
 export const LEAVE_TYPE_MIN_LENGTH =4;

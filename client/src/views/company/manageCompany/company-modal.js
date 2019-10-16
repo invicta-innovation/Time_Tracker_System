@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {ADD_COMPANY,UPDATE_COMPANY} from '../../../_constants/types';
 import {Modal,Form,Col} from "react-bootstrap";
-import {showModal} from '../../../_actions/company-action';
+import {showModal} from '../../../_actions/company/company-action';
 
 class CompanyModal extends Component {
     state={

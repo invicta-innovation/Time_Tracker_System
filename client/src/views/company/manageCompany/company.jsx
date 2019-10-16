@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CompanyModal from './company-modal';
 import CompanyList from './company-list';
-import {showModal} from '../../../_actions/company-action';
+import {showModal} from '../../../_actions/company/company-action';
 
 class Company extends Component {
     render() {

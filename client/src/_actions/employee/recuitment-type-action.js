@@ -5,12 +5,12 @@ import {
   UPDATE_RECUITMENT_TYPE,
   SHOW_MODAL_RECUITMENT_TYPE,
   SHOW_ERROR_MESSAGE
-} from "../_constants/types";
+} from "../../_constants/types";
 import axios from "axios";
-import { API_BASE_URL } from "../_constants/index";
+import { API_EMPLOYEE_BASE_URL } from "../../_constants/index";
 
 export const fetchRecuitmentType = () => dispatch => {
-  axios.get(API_BASE_URL + "/recuitmentType").then(res =>
+  axios.get(`${API_EMPLOYEE_BASE_URL}/recruitment-types`).then(res =>
     dispatch({
       type: GET_RECUITMENT_TYPE,
       recuitmentTypeList: res.data
@@ -20,23 +20,23 @@ export const fetchRecuitmentType = () => dispatch => {
 
 export const addRecuitmentType = recuitmentType => dispatch => {
   axios
-    .post(`${API_BASE_URL}/recuitmentType`, recuitmentType)
+    .post(`${API_EMPLOYEE_BASE_URL}/recuitmentTypes`, recuitmentType)
     .then(res =>
       dispatch({
         type: ADD_RECUITMENT_TYPE,
         recuitmentTypeObj: res.data
       })
     )
-    .catch(err =>
-      dispatch({
-        type: SHOW_ERROR_MESSAGE,
-        payload: err.response.data
-      })
+    .catch(err => console.log(err)
+      // dispatch({
+      //   type: SHOW_ERROR_MESSAGE,
+      //   payload: err.response.data
+      // })
     );
 };
 
 export const deleteRecuitmentType = id => dispatch => {
-  axios.delete(`${API_BASE_URL}/recuitmentType/${id}`).then(res =>
+  axios.delete(`${API_EMPLOYEE_BASE_URL}/recuitmentType/${id}`).then(res =>
     dispatch({
       type: DELETE_RECUITMENT_TYPE,
       payload: id
@@ -51,7 +51,7 @@ export const deleteRecuitmentType = id => dispatch => {
 
 export const updateRecuitmentType = recuitmentType => dispatch => {
   axios
-    .put(`${API_BASE_URL}/recuitmentType/${recuitmentType.id}`, recuitmentType)
+    .put(`${API_EMPLOYEE_BASE_URL}/recuitmentType/${recuitmentType.id}`, recuitmentType)
     .then(res =>
       dispatch({
         type: UPDATE_RECUITMENT_TYPE,
@@ -72,7 +72,7 @@ export const showModal = (modaldata, id) => dispatch => {
       modaldata:modaldata
     });
   } else if (modaldata.action == "EDIT") {
-    axios.get(`${API_BASE_URL}/recuitmentType/${id}`).then(res =>
+    axios.get(`${API_EMPLOYEE_BASE_URL}/recuitmentType/${id}`).then(res =>
       dispatch({
         type: SHOW_MODAL_RECUITMENT_TYPE,
         modaldata:modaldata,

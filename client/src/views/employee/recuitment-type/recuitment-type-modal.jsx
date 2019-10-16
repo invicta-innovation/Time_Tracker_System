@@ -5,14 +5,15 @@ import {
   addRecuitmentType,
   updateRecuitmentType,
   showModal
-} from "../../../_actions/recuitment-type-action";
+} from "../../../_actions/employee/recuitment-type-action";
 import { RECUITMENT_MIN_LENGTH, RECUITMENT_MAX_LENGTH } from "../../../_constants";
 import swal from 'sweetalert';
+import Axios from "axios";
 
 class RecuitmentTypeModel extends Component {
     state = {
         id: "",
-        recuitmentTypeName: "",
+        typeName: "",
         errors: {},
         action:null
     };
@@ -24,21 +25,27 @@ class RecuitmentTypeModel extends Component {
   };
 
   handleSubmit =()=> {
-    const{action} =this.state;
     let recuitmentTypeObj ={
-      id:this.state.id,
-      recuitmentTypeName:this.state.recuitmentTypeName
-    }
-    this.checkEmptySpace();
+          // id:this.state.id,
+          typeName:this.state.typeName
+        }
+    this.props.addRecuitmentType(recuitmentTypeObj);
+  
+  //   const{action} =this.state;
+  //   let recuitmentTypeObj ={
+  //     id:this.state.id,
+  //     typeName:this.state.typeName
+  //   }
+  //   this.checkEmptySpace();
     
-    if (this.isEmpty(this.state.errors)) {
-    if (action== "ADD") {
-      this.props.addRecuitmentType(recuitmentTypeObj);
-      }
-     else if (action == "EDIT") {
-      this.props.updateRecuitmentType(recuitmentTypeObj);
-    }
-  }
+  //   if (this.isEmpty(this.state.errors)) {
+  //   if (action== "ADD") {
+  //     this.props.addRecuitmentType(recuitmentTypeObj);
+  //     }
+  //    else if (action == "EDIT") {
+  //     this.props.updateRecuitmentType(recuitmentTypeObj);
+  //   }
+  // }
   };
 
   isEmpty = (obj) => {
@@ -53,10 +60,10 @@ class RecuitmentTypeModel extends Component {
   componentWillReceiveProps(nextProps) {
     const{action} =nextProps.modaldata;
     if (action == "EDIT") {
-      let {id,recuitmentTypeName}=nextProps.recuitmentType;
-      this.setState({id,recuitmentTypeName,action});
+      let {id,typeName}=nextProps.recuitmentType;
+      this.setState({id,typeName,action});
     } else if (action == "ADD") {
-      this.setState({ recuitmentTypeName: '', action:action });
+      this.setState({ typeName: '', action:action });
     }
     if (nextProps.errors != '') {
       this.setState({ errors: nextProps.errors })
@@ -73,7 +80,7 @@ class RecuitmentTypeModel extends Component {
     validate = (name, value) => {
       console.log(name, value);
       switch (name) {
-        case 'recuitmentTypeName':
+        case 'typeName':
           const RECUITMENT_NAME_REGEX = RegExp("^[a-zA-Z'.\\s]{1,40}$");
           if (value.length < RECUITMENT_MIN_LENGTH) {
             this.setState(
@@ -98,9 +105,9 @@ class RecuitmentTypeModel extends Component {
     }
 
     checkEmptySpace=()=>{
-      if(this.state.recuitmentTypeName.trim()===""){
+      if(this.state.typeName.trim()===""){
         this.setState(
-          { errors: {recuitmentTypeName: `Please enter recuitment type.` } }
+          { errors: {typeName: `Please enter recuitment type.` } }
         )
       }
     }  
@@ -121,9 +128,9 @@ class RecuitmentTypeModel extends Component {
                   <Form.Label>Recruitment Type Name</Form.Label>
                   <Form.Control
                     type="text"
-                      name="recuitmentTypeName"
+                      name="typeName"
                       placeholder="Enter the Recruitmenttype Name.."
-                    value={this.state.recuitmentTypeName}
+                    value={this.state.typeName}
                     onChange={this.handleChange}
                   />
               <small className="text-danger">{this.state.errors.recuitmentType}</small>
@@ -177,7 +184,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStatetoProps,
-  mapDispatchToProps
-)(RecuitmentTypeModel);
+export default connect( mapStatetoProps, mapDispatchToProps )(RecuitmentTypeModel);
