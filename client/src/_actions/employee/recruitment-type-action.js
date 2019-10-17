@@ -3,7 +3,8 @@ import {
   ADD_RECUITMENT_TYPE,
   DELETE_RECUITMENT_TYPE,
   SHOW_MODAL_RECUITMENT_TYPE,
-  SHOW_ERROR_MESSAGE
+  SHOW_ERROR_MESSAGE,
+  UPDATE_RECUITMENT_TYPE
 } from "../../_constants/types";
 import axios from "axios";
 import { API_EMPLOYEE_BASE_URL } from "../../_constants/index";
@@ -48,27 +49,28 @@ export const deleteRecuitmentType = id => dispatch => {
   );
 };
 
-// export const updateRecuitmentType = recuitmentType => dispatch => {
-//   axios
-//     .put(`${API_EMPLOYEE_BASE_URL}/recruitment-types/${recuitmentType.id}`, recuitmentType)
-//     .then(res =>
-//       dispatch({
-//         type: UPDATE_RECUITMENT_TYPE,
-//         payload: res.data
-//       })
-//     ).catch(err=>
-//       dispatch({
-//         type:SHOW_ERROR_MESSAGE,
-//         payload:err.response.data
-//       })
-//     );
-// };
+export const updateRecuitmentType = recuitmentType => dispatch => {
+  axios
+    .put(`${API_EMPLOYEE_BASE_URL}/recruitment-types/${recuitmentType.id}`, recuitmentType)
+    .then(res =>
+      dispatch({
+        type: UPDATE_RECUITMENT_TYPE,
+        payload: res.data
+      })
+    ).catch(err=>
+      dispatch({
+        type:SHOW_ERROR_MESSAGE,
+        payload:err.response.data
+      })
+    );
+};
 
 export const showModal = (modaldata, id) => dispatch => {
   if (modaldata.action == "ADD") {
     dispatch({
       type: SHOW_MODAL_RECUITMENT_TYPE,
-      modaldata:modaldata
+      modaldata:modaldata,
+      payload:{}
     });
   } else if (modaldata.action == "EDIT") {
     axios.get(`${API_EMPLOYEE_BASE_URL}/recruitment-types/${id}`).then(res =>

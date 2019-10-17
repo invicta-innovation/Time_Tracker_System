@@ -2,50 +2,36 @@ import React, { Component } from "react";
 import { Modal, Form, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import {addRecuitmentType, updateRecuitmentType, showModal} 
-from "../../../_actions/employee/recuitment-type-action";
-import { RECUITMENT_MIN_LENGTH, RECUITMENT_MAX_LENGTH } from "../../../_constants";
+from "../../../_actions/employee/recruitment-type-action";
 import swal from 'sweetalert';
 
-class RecuitmentTypeModel extends Component {
+class RecruitmentTypeModal extends Component {
     state = {
-        id: "",
+        id: null,
         typeName: "",
-        errors: {},
         action:null
     };
 
   handleChange = (e) => {
     this.setState({ errors: { [e.target.name]: '' } })
     this.setState({ [e.target.name]: e.target.value });
-    this.validate(e.target.name, e.target.value);
   };
 
   handleSubmit =()=> {
     const{action} =this.state;
     let recuitmentTypeObj ={
-      // id:this.state.id,
+      id:this.state.id,
       typeName:this.state.typeName
     }
-    this.checkEmptySpace();
     
-    if (this.isEmpty(this.state.errors)) {
     if (action== "ADD") {
       this.props.addRecuitmentType(recuitmentTypeObj);
       }
      else if (action == "EDIT") {
-      // this.props.updateRecuitmentType(recuitmentTypeObj);
+      this.props.updateRecuitmentType(recuitmentTypeObj);
     }
-  }
-  };
-
-  isEmpty = (obj) => {
-    for (var key in obj) {
-      if (obj.hasOwnProperty(key))
-        return false;
-    }
-    return true;
-  }
   
+  };
 
   componentWillReceiveProps(nextProps) {
     const{action} =nextProps.modaldata;
@@ -55,9 +41,7 @@ class RecuitmentTypeModel extends Component {
     } else if (action == "ADD") {
       this.setState({ typeName: '', action:action });
     }
-    if (nextProps.errors != '') {
-      this.setState({ errors: nextProps.errors })
-    }
+    
     if(nextProps.messages =='RECUITMENT_TYPE_ADDED'){
       swal("Success!", "You have successfully Saved the Recuitment Type!", "success");
     }
@@ -65,42 +49,6 @@ class RecuitmentTypeModel extends Component {
       swal("Success!", "You have successfully Edited the Recuitment Type!", "success");
     }
   }
-
-    // Validation Functions
-    validate = (name, value) => {
-      console.log(name, value);
-      switch (name) {
-        case 'typeName':
-          const RECUITMENT_NAME_REGEX = RegExp("^[a-zA-Z'.\\s]{1,40}$");
-          if (value.length < RECUITMENT_MIN_LENGTH) {
-            this.setState(
-              { errors: { RecuitmentType: `Leave type name is too short (Minimum ${RECUITMENT_MIN_LENGTH} characters needed.)` } }
-            )
-          }
-          else if (value.length > RECUITMENT_MAX_LENGTH) {
-            this.setState(
-              { errors: { RecuitmentType: `Leave type name is too (Maximum ${RECUITMENT_MAX_LENGTH} characters allowed.)` } }
-            )
-          } else if (!RECUITMENT_NAME_REGEX .test(value)) {
-            this.setState(
-              { errors: { RecuitmentType: `Only character allowed.` } }
-            )
-          }
-          else {
-            this.setState(
-              { errors: {} }
-            )
-          }
-      }
-    }
-
-    checkEmptySpace=()=>{
-      if(this.state.typeName.trim()===""){
-        this.setState(
-          { errors: {typeName: `Please enter recuitment type.` } }
-        )
-      }
-    }  
 
     render() {
       const { show, title, buttonName } = this.props.modaldata;
@@ -123,7 +71,7 @@ class RecuitmentTypeModel extends Component {
                     value={this.state.typeName}
                     onChange={this.handleChange}
                   />
-              <small className="text-danger">{this.state.errors.recuitmentType}</small>
+              {/* <small className="text-danger">{this.state.errors.recuitmentType}</small> */}
                 </Form.Group>
                
               </Form.Row>
@@ -160,9 +108,7 @@ class RecuitmentTypeModel extends Component {
 const mapStatetoProps = state => {
   return {
     modaldata: state.recuitmentTypeStore.modaldata,
-    recuitmentType: state.recuitmentTypeStore.recuitmentType,
-    errors: state.recuitmentTypeStore.errors,
-    messages: state.recuitmentTypeStore.messages
+    recuitmentType: state.recuitmentTypeStore.recuitmentType
   };
 };
 
@@ -170,8 +116,8 @@ const mapDispatchToProps = dispatch => {
   return {
     onModalShow: (showstatus) => dispatch(showModal({ action: "ADD", show: showstatus, title: "Add Recuitment Type" })),
     addRecuitmentType: obj => dispatch(addRecuitmentType(obj)),
-    // updateRecuitmentType: obj => dispatch(updateRecuitmentType(obj))
+    updateRecuitmentType: obj => dispatch(updateRecuitmentType(obj))
   };
 };
 
-export default connect( mapStatetoProps, mapDispatchToProps )(RecuitmentTypeModel);
+export default connect( mapStatetoProps, mapDispatchToProps )(RecruitmentTypeModal);
