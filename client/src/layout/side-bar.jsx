@@ -22,33 +22,33 @@ const linkArray = [
       { subMenuLink: "/profile", subMenuName: "Profile" },
     ]
   },
-  {
-    menuName: "Leave",
-    menuLink: "#",
-    icon: "fas fa-file-alt mr-3 text-gray",
-    permission: ['HR', 'EMPLOYEE'],
-    subMenu: [
-      { subMenuLink: "/leaveDashboard", subMenuName: "Leave Dashboard" },
-      { subMenuLink: "/requestLeave/calender", subMenuName: "Request Leave" },
-      { subMenuLink: "/lieuLeave", subMenuName: "Lieu Leave" },
-      { subMenuLink: "/leaveHistory", subMenuName: "Leave History" },
-      { subMenuLink: "/carryforward", subMenuName: "Carry Forward" },
-    ]
-  },
-  {
-    menuName: "Manage Leave",
-    menuLink: "#",
-    icon: "fas fa-list mr-3 text-gray",
-    permission: ['HR'],
-    subMenu: [
-      { subMenuLink: "/manageLeaveDashboard", subMenuName: "Leave Dashboard" },
-      { subMenuLink: "/configleave", subMenuName: "Leave Types & Policies" },
-      { subMenuLink: "/leaveAllocation", subMenuName: "Leave Allocation" },
-      { subMenuLink: "/manageLeaveRequests", subMenuName: "Process Leave" },
-      { subMenuLink: "/manageLeaveLeiuLeave", subMenuName: "Lieu Leave" },
-      { subMenuLink: "/manageCarryForward", subMenuName: "Carry Forward" },
-    ]
-  },
+  // {
+  //   menuName: "Leave",
+  //   menuLink: "#",
+  //   icon: "fas fa-file-alt mr-3 text-gray",
+  //   permission: ['HR', 'EMPLOYEE'],
+  //   subMenu: [
+  //     { subMenuLink: "/leaveDashboard", subMenuName: "Leave Dashboard" },
+  //     { subMenuLink: "/requestLeave/calender", subMenuName: "Request Leave" },
+  //     { subMenuLink: "/lieuLeave", subMenuName: "Lieu Leave" },
+  //     { subMenuLink: "/leaveHistory", subMenuName: "Leave History" },
+  //     { subMenuLink: "/carryforward", subMenuName: "Carry Forward" },
+  //   ]
+  // },
+  // {
+  //   menuName: "Manage Leave",
+  //   menuLink: "#",
+  //   icon: "fas fa-list mr-3 text-gray",
+  //   permission: ['HR'],
+  //   subMenu: [
+  //     { subMenuLink: "/manageLeaveDashboard", subMenuName: "Leave Dashboard" },
+  //     { subMenuLink: "/configleave", subMenuName: "Leave Types & Policies" },
+  //     { subMenuLink: "/leaveAllocation", subMenuName: "Leave Allocation" },
+  //     { subMenuLink: "/manageLeaveRequests", subMenuName: "Process Leave" },
+  //     { subMenuLink: "/manageLeaveLeiuLeave", subMenuName: "Lieu Leave" },
+  //     { subMenuLink: "/manageCarryForward", subMenuName: "Carry Forward" },
+  //   ]
+  // },
   {
     menuName: "Manage User",
     menuLink: "#",
