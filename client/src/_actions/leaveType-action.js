@@ -64,13 +64,13 @@ export const checkLeaveTypeAvailability = (leaveType) => dispatch => {
 
 
 export const showModal = (modaldata, id) => dispatch => {
-  if (modaldata.action == 'ADD') {
+  if (modaldata.action === 'ADD') {
     dispatch({
       type: SHOW_MODAL_LEAVE_TYPE,
       modaldata: modaldata,
 
     })
-  } else if (modaldata.action == 'EDIT') {
+  } else if (modaldata.action === 'EDIT') {
     axios.get(`${API_BASE_URL}/leaveType/${id}`).then(res =>
       dispatch({
         type: SHOW_MODAL_LEAVE_TYPE,

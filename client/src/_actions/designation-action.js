@@ -44,7 +44,7 @@ export const updateDesignation = designation => dispatch => {
   );
 };
 
-export const deleteDesignation = id => dispatch => {
+export const deleteDesignation = (id) => dispatch => {
   axios.delete(`${API_BASE_URL}/designation/${id}`).then(res =>
     dispatch({
       type: DELETE_DESIGNATION,
@@ -58,12 +58,12 @@ export const deleteDesignation = id => dispatch => {
 };
 
 export const showModal = (modaldata, id) => dispatch => {
-  if (modaldata.action == "ADD") {
+  if (modaldata.action === "ADD") {
     dispatch({
       type: SHOW_MODAL_DESIGNATION,
       modaldata: modaldata,
     });
-  } else if (modaldata.action == "EDIT") {
+  } else if (modaldata.action === "EDIT") {
     axios.get(`${API_BASE_URL}/designation/${id}`).then(res =>
       dispatch({
         type: SHOW_MODAL_DESIGNATION,
