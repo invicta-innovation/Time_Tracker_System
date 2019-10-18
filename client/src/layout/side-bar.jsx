@@ -16,7 +16,7 @@ const linkArray = [
     icon: "fas fa-user-tie mr-3 text-gray",
     permission: ['HR'],
     subMenu: [
-      { subMenuLink: "/recuitmentType", subMenuName: "Recuitment Type" },
+      { subMenuLink: "/recruitmentType", subMenuName: "Recuitment Type" },
       { subMenuLink: "/designation", subMenuName: "Designation" },
       { subMenuLink: "/recruitment", subMenuName: "Recruitment" },
       { subMenuLink: "/profile", subMenuName: "Profile" },

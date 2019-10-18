@@ -1,24 +1,17 @@
 import React, { Component } from 'react'
 import { Table } from "react-bootstrap";
 import { connect } from "react-redux";
-import { fetchRecuitmentType, showModal, deleteRecuitmentType } from "../../../_actions/employee/recuitment-type-action";
+import { fetchRecuitmentType, showModal, deleteRecuitmentType } from "../../../_actions/employee/recruitment-type-action";
 import swal from 'sweetalert';
-import Axios from 'axios';
-import { API_EMPLOYEE_BASE_URL } from '../../../_constants';
 
-class RecuitmentTypeList extends Component {
+class RecruitmentTypeList extends Component {
   constructor(props) {
     super(props);
   }
 componentWillMount(){
-
   this.props.fetchRecuitmentType();
 }
-  componentDidMount() {
-
-    // Axios.get(`${API_EMPLOYEE_BASE_URL}/recruitment-types`).then(res=>console.log(res.data))
-   console.log(this.props.recuitmentTypes);
-  }
+ 
   handleDelete =(id)=>{
     swal({
       title: "Are you sure?",
@@ -98,9 +91,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(
+export default connect( 
   mapStateToProps,
   mapDispatchToProps
-)(RecuitmentTypeList);
+)(RecruitmentTypeList);
 
 

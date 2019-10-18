@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 
 export default class TaskForm extends Component {
   state = {
+    id:null,
     projectName: null,
     taskName: null,
     description: null,
@@ -10,6 +11,7 @@ export default class TaskForm extends Component {
   };
   componentWillMount() {
     this.setState({
+      id:this.props.task.id,
       projectName: this.props.task.projectName,
       taskName: this.props.task.taskName,
       description: this.props.task.description,
@@ -19,6 +21,7 @@ export default class TaskForm extends Component {
   handleSubmit = obj => {
     this.props.handleSubmit(obj);
     this.setState({
+      id:null,
       projectName: "",
       taskName: "",
       description: "",

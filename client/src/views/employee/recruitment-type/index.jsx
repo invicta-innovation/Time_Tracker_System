@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import RecuitmentTypeModal from './recuitment-type-modal';
-import RecuitmentTypeList from './recuitment-type-list';
+import RecruitmentTypeModal from './recruitment-type-modal';
+import RecruitmentTypeList from './recruitment-type-list';
 import { connect } from 'react-redux';
-import { showModal } from '../../../_actions/employee/recuitment-type-action';
+import { showModal } from '../../../_actions/employee/recruitment-type-action';
 
-class RecuitmentType extends Component {
+class RecruitmentType extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -25,13 +25,13 @@ class RecuitmentType extends Component {
 	  btn-align="right"
 	  onClick={()=>this.props.onModalShow(true)}
 	  >
-	  + Recruitment
+	  + Recruitment Type
 </button>
 
-<RecuitmentTypeModal/>
+<RecruitmentTypeModal/>
   </div>
   <div class="card-body">
-	<RecuitmentTypeList/>
+	<RecruitmentTypeList/>
   </div>
 </div>
 </section>
@@ -45,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export default connect(null, mapDispatchToProps)(RecuitmentType);
+export default connect(null, mapDispatchToProps)(RecruitmentType);

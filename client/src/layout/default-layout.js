@@ -16,22 +16,17 @@ import ManageCarryforward from "../views/leave-system/manage-carryforward";
 
 import ConfigureCalendar from "../views/settings/configureCalendar";
 import Role from "../views/user/role";
-
 import ManageIndivitualLeaveHistory from "../views/leave-system/manage-indivitual-leave-history";
-import CarryForwardLeaveHistory from "../views/leave-system/components/carry-forward-leave-history";
 
 import Users from "../views/user/users";
 import ManageLeaveAllocation from "../views/leave-system/manage-leave-allocation";
 import ManageProcessLeave from "../views/leave-system/manage-process-leave";
 import ManageLeaveTypesAndPolicies from "../views/leave-system/manage-leave-type-policy";
-import RecuitmentType from "../views/employee/recuitment-type";
+import RecruitmentType from "../views/employee/recruitment-type";
 import ManageDesignation from "../views/leave-system/manage-Designation";
 import RequestLeave from "../views/leave-system/leave-request/index";
-import authService from "../_utils/auth-service";
 import Allocation from "../views/leave-system/leave-allocation/Allocation";
-import ModalCalendar from "../views/leave-system/leave-request/ModalCalendar";
 import WorkflowMain from "../views/leave-system/leave-workflow/workflow-main";
-import Card from "../commons/card";
 
 import Company from "../views/company/manageCompany/company";
 import Project from "../views/company/manageProject/project";
@@ -39,7 +34,6 @@ import TimeSheet from "../views/timetracker/timesheet";
 import Profile from "../views/employee/profile/profile";
 import Designation from "../views/leave-system/manage-designation/designation";
 import Recruitment from "../views/employee/recruitment/recruitment";
-// import RecuitmentType from '../views/employee/recuitment-type/index';
 
 export class DefaultLayout extends Component {
   renderLogin = () => {
@@ -93,16 +87,17 @@ export class DefaultLayout extends Component {
                 <Route path="/indivitualLeaveHistory" component={ManageIndivitualLeaveHistory} />
                 <Route path="/leaveAllocation" component={ManageLeaveAllocation} />
                 <Route path="/manageAllocation/:id" component={Allocation} />
-                <Route path="/recuitmentType" component={RecuitmentType} />
+                {/* <Route path="/recruitmentType" component={RecruitmentType} /> */}
                 <Route path="/designation" component={ManageDesignation} />
                 <Route path="/workflow/:id" component={WorkflowMain} />
-
+{/* ///////////////////////////////////////////////////////////////////////////////////// */}
                 <Route path="/company" component={Company} />
                 <Route path="/project" component={Project} />
                 <Route path="/timeSheet" component={TimeSheet} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/designation" component={Designation} />
                 <Route path="/recruitment" component={Recruitment} />
+                <Route path="/recruitmentType" component={RecruitmentType} />
                 {/* {this.renderLogin()} */}
               </Switch>
             </div>
