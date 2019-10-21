@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ProjectModal extends Component {
+class ProfileModal extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class ProjectModal extends Component {
     }
 }
 
-export default ProjectModal;
+export default ProfileModal;

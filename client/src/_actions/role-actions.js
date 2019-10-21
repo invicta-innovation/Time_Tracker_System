@@ -52,12 +52,12 @@ export const updateRole = role => dispatch => {
 };
 
 export const showModal = (modaldata, id) => dispatch => {
-  if (modaldata.action == "ADD") {
+  if (modaldata.action === "ADD") {
     dispatch({
       type: SHOW_MODAL_ROLE,
       modaldata: modaldata,
     });
-  } else if (modaldata.action == "EDIT") {
+  } else if (modaldata.action === "EDIT") {
     axios.get(`${API_BASE_URL}/role/${id}`).then(res =>
       dispatch({
         type: SHOW_MODAL_ROLE,

@@ -23,7 +23,6 @@ import ManageLeaveAllocation from "../views/leave-system/manage-leave-allocation
 import ManageProcessLeave from "../views/leave-system/manage-process-leave";
 import ManageLeaveTypesAndPolicies from "../views/leave-system/manage-leave-type-policy";
 import RecruitmentType from "../views/employee/recruitment-type";
-import ManageDesignation from "../views/leave-system/manage-Designation";
 import RequestLeave from "../views/leave-system/leave-request/index";
 import Allocation from "../views/leave-system/leave-allocation/Allocation";
 import WorkflowMain from "../views/leave-system/leave-workflow/workflow-main";
@@ -32,7 +31,7 @@ import Company from "../views/company/manageCompany/company";
 import Project from "../views/company/manageProject/project";
 import TimeSheet from "../views/timetracker/timesheet";
 import Profile from "../views/employee/profile/profile";
-import Designation from "../views/leave-system/manage-designation/designation";
+import Designation from "../views/employee/designation/designation";
 import Recruitment from "../views/employee/recruitment/recruitment";
 
 export class DefaultLayout extends Component {
@@ -87,8 +86,6 @@ export class DefaultLayout extends Component {
                 <Route path="/indivitualLeaveHistory" component={ManageIndivitualLeaveHistory} />
                 <Route path="/leaveAllocation" component={ManageLeaveAllocation} />
                 <Route path="/manageAllocation/:id" component={Allocation} />
-                {/* <Route path="/recruitmentType" component={RecruitmentType} /> */}
-                <Route path="/designation" component={ManageDesignation} />
                 <Route path="/workflow/:id" component={WorkflowMain} />
 {/* ///////////////////////////////////////////////////////////////////////////////////// */}
                 <Route path="/company" component={Company} />
