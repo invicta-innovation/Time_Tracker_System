@@ -9,7 +9,9 @@ import {
 
 const initialState = {
   modaldata: {},
-  designations: [],
+  designations: [{
+    id:1,designation:"Software Engineer"
+  }],
   designation: {},
   errors: {},
   messages:{}

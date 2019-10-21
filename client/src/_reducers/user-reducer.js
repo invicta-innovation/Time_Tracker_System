@@ -1,7 +1,14 @@
 import {GET_USER,NEW_USER,EDIT_USER,USER_STATUS,SHOW_MODAL_USER,SHOW_ERROR_MESSAGE} from '../_constants/types'
 
 const initialState ={
-    users:[],
+    users:[
+      {
+        id:1,
+        userName:"John",
+        email:"john19@gmail.com",
+        role:{id:2,roleName:"EMPLOYEE"}
+      }
+    ],
     user:{},
     modaldata:{},
     errors:{},
