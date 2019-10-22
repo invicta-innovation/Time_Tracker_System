@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import {  Table } from "react-bootstrap";
 import TaskForm from "./taskForm";
 import TaskRow from "./taskRow";
+import { connect } from 'react-redux';
+import { fetchTasks } from "../../../_actions/time-tracker/task-action";
+
 const tasks = [
   {
     id: 1,
@@ -27,7 +30,9 @@ class DailyTask extends Component {
     tasks.push(taskObj);
     this.setState({ isAdd: false });
   };
-  
+  componentWillMount(){
+    this.props.getTasks()
+  }
   render() {
     return (
       <div>
@@ -41,7 +46,7 @@ class DailyTask extends Component {
             </tr>
           </thead>
           <tbody>
-            {tasks.map(task =>(
+            {this.props.taskList.map(task =>(
                 <TaskRow
                   tasks={tasks}
                   key={task.id}
@@ -68,5 +73,10 @@ class DailyTask extends Component {
     );
   }
 }
-
-export default DailyTask;
+const mapStateToProps = state =>({
+  taskList:state.taskStore.tasks
+})
+const mapDispatchToProps=dispatch=>({
+ getTasks:()=>dispatch(fetchTasks())
+})
+export default connect (mapStateToProps,mapDispatchToProps)(DailyTask);

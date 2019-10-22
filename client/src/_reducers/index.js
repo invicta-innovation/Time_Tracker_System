@@ -13,6 +13,7 @@ import leaveAllocationReducer from "./leave-allocation-reducer";
 import companyReducer from "./company/company-reducer";
 import projectReducer from "./company/project-reducer";
 import recruitmentReducer from "./employee/recruitment-reducer";
+import taskReducer from "./time_tracker/task-reducer";
 
 export default combineReducers({
   roleStore: roleReducer,
@@ -30,4 +31,5 @@ export default combineReducers({
   projectStore:projectReducer,
   recruitmentStore:recruitmentReducer,
 
+  taskStore:taskReducer,
 });
