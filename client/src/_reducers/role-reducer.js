@@ -3,7 +3,11 @@ import { GET_ROLE ,ADD_ROLE,DELETE_ROLE,UPDATE_ROLE,SHOW_MODAL_ROLE,SHOW_ERROR_M
 const initialState = {
   modaldata:{},
   errors:{},
-  roles: [],
+  roles: [
+   { id:1, roleName:"HR"},
+   { id:2, roleName:"EMPLOYEE"}
+
+  ],
   role:{},
   messages:{},
 }; 
