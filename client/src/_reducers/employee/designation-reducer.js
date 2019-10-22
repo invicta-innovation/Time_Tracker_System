@@ -29,7 +29,8 @@ export default function (state = initialState, action) {
     case ADD_DESIGNATION:
       return {
         ...state,
-        designations: action.payload,
+        modaldata:{show:false},
+        designations: state.designations.concat(action.payload)
       };
     default:
       return state;

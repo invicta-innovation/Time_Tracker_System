@@ -13,14 +13,13 @@ class DesignationModal extends Component {
 
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.value });
   };
   componentWillReceiveProps(nextProps) {
-    const { action } = nextProps.modaldata.action;
+    const { action } = nextProps.modaldata;
     if (action === "ADD") {
-      let { designation } = nextProps.designation;
-      this.setState({ designation });
-    }
+      this.setState({ action:action });
+    }    
   }
 
   handleSubmit = () => {
@@ -28,8 +27,6 @@ class DesignationModal extends Component {
     let designationObj = {
       designation: this.state.designation
     }
-    this.props.addDesignation(designationObj);
-
     if (action === "ADD") {
       this.props.addDesignation(designationObj);
 
