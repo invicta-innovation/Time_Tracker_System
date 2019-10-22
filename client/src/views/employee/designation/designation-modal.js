@@ -2,18 +2,45 @@ import React, { Component } from 'react';
 import { UPDATE_DESIGNATION, ADD_DESIGNATION } from '../../../_constants/types';
 import { connect } from 'react-redux';
 import { Modal, Form, Col } from "react-bootstrap";
-import { showModal } from '../../../_actions/employee/designation-action';
+import { showModal, addDesignation } from '../../../_actions/employee/designation-action';
 
 class DesignationModal extends Component {
   state = {
     id: null,
-    designation: ''
+    designation: '',
+    action: null
   }
 
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
+  };
+  componentWillReceiveProps(nextProps) {
+    const { action } = nextProps.modaldata.action;
+    if (action === "ADD") {
+      let { designation } = nextProps.designation;
+      this.setState({ designation });
+    }
   }
+
+  handleSubmit = () => {
+    const { action } = this.state;
+    let designationObj = {
+      designation: this.state.designation
+    }
+    this.props.addDesignation(designationObj);
+
+    if (action === "ADD") {
+      this.props.addDesignation(designationObj);
+
+    }
+    //  else if (action == "EDIT") {
+    //   this.props.updateRecuitmentType(recuitmentTypeObj);
+    // }
+
+  };
+
+
 
 
   render() {
@@ -55,8 +82,7 @@ class DesignationModal extends Component {
             <button
               type="submit"
               class="btn btn-danger "
-              onClick={() => this.props.showModal(false)}
-            >
+              onClick={() => this.props.showModal(false)}>
               Close
               </button>
             <button
@@ -77,6 +103,8 @@ const mapStateToProps = state => ({
   designationObj: state.designationStore.designation
 })
 const mapDispatchToProps = dispatch => ({
-  showModal: status =>dispatch(showModal({action:'ADD',show:status,title:'Add Designation'}))
+  showModal: status => dispatch(showModal({ action: 'ADD', show: status, title: 'Add Designation' })),
+  addDesignation: designationObj => dispatch(addDesignation(designationObj)),
+
 })
 export default connect(mapStateToProps, mapDispatchToProps)(DesignationModal)

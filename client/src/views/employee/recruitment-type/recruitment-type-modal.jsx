@@ -34,7 +34,7 @@ class RecruitmentTypeModal extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    const{action} =nextProps.modaldata;
+    const {action} =nextProps.modaldata;
     if (action == "EDIT") {
       let {id,typeName}=nextProps.recuitmentType;
       this.setState({id,typeName,action});

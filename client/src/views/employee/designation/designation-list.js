@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDesignation, showModal } from '../../../_actions/employee/designation-action';
+import { fetchDesignation, showModal, addDesignation } from '../../../_actions/employee/designation-action';
 
 
 
@@ -34,7 +34,7 @@ class DesignationList extends Component {
                   <i class="fas fa-pen-fancy" />
                 </button>
                   &nbsp;&nbsp;&nbsp;
-  
+
                 <button
                     type="submit"
                     class="btn btn-danger btn-circle"
@@ -59,7 +59,8 @@ const mapStateToProps = state => ({
   designations: state.designationStore.designations
 })
 const mapDispatchToProps = dispatch => ({
-  getDesignation:()=>dispatch(fetchDesignation()),
-  showModal: (designation)=> dispatch(showModal({action:'ADD',show:true ,title:'Add Designation'},designation))
+  getDesignation: () => dispatch(fetchDesignation()),
+  addDesignation: (designatioObj) => dispatch(addDesignation(designatioObj)),
+  showModal: (designation) => dispatch(showModal({ action: 'ADD', show: true, title: 'Add Designation' }, designation))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(DesignationList)

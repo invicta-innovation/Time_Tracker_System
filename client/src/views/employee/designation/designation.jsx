@@ -18,9 +18,12 @@ class Designation extends Component {
               title="add designation"
               onClick={() => this.props.showModal(true)}>
               Add Designation
+              <DesignationModal />
 
             </button>
-            <DesignationModal />
+            {/* <div>
+              <DesignationModal />
+            </div> */}
 
           </div>
           <div className="card-body">
