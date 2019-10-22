@@ -24,7 +24,7 @@ class RecruitmentType extends Component {
 							title="addRecuitmentType"
 							btn-align="right"
 							onClick={() => this.props.onModalShow(true)} >
-							+ Recruitment Type 
+							+ Recruitment Type
 							</button>
 						<RecruitmentTypeModal />
 					</div>

@@ -27,7 +27,7 @@ class DesignationModal extends Component {
           </Modal.Header>
           <Modal.Body>
             <Form>
-              <Form.Row>
+              {/* <Form.Row>
                 <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Id : </Form.Label>
                   <Form.Control
@@ -37,7 +37,7 @@ class DesignationModal extends Component {
                     onChange={this.handleChange}
                   />
                 </Form.Group>
-              </Form.Row>
+              </Form.Row> */}
               <Form.Row>
                 <Form.Group as={Col} controlId="designation">
                   <Form.Label> Designation : </Form.Label>
