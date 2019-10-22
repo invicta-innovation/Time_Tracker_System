@@ -5,10 +5,10 @@ const config= TypeOrmModule.forRoot({
   host: 'localhost',
   port: 5432,
   username: 'postgres',
-  password: 'root',
+  password: 'manager',
   schema: 'time_tracker',
   database: 'time_tracker_system',
-  entities: ['src/**/*.entity{.ts,.js}'],
+  entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: true,
 })
 export default config;
