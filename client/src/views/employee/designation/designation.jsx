@@ -2,26 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DesignationModal from './designation-modal';
 import DesignationList from './designation-list';
-import { showModal } from '../../../_actions/designation-action';
+import { showModal } from '../../../_actions/employee/designation-action';
 
 class Designation extends Component {
   render() {
     return (
-      <section class="py-3">
+      <section className="py-3">
 
-        <div class="card">
+        <div className="card">
           <div class="d-flex justify-content-between card-header">
             <h3 class="h6 text-uppercase mb-0">List of Designation</h3>
 
             <button
-              class="btn btn-info btn"
+              className="btn btn-info btn"
               title="add designation"
-            >
+              onClick={() => this.props.showModal(true)}>
               Add Designation
+
             </button>
-            {/* <DesignationModal /> */}
+            <DesignationModal />
+
           </div>
-          <div class="card-body">
+          <div className="card-body">
             <DesignationList />
           </div>
         </div>
