@@ -49,7 +49,7 @@ class DailyTask extends Component {
                 <i class="fa fa-plus" aria-hidden="true"/>
               </button>
             ) : (
-              <TaskForm task={{}} handleSubmit={(obj) => this.handlePush(obj)}  isAddUpdate={(s)=>this.isAddUpdate(s)} />
+              <TaskForm task={{}} handleSubmit={(obj) => this.handlePush(obj)}  isAddUpdate={(s)=>this.isAddUpdate(s)} isAdd={this.state.isAdd}/>
             )}
           </tbody>
         </Table>

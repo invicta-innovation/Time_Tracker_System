@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 
 export default class TaskForm extends Component {
   state = {
-    id:null,
+    id: null,
     projectName: null,
     taskName: null,
     description: null,
@@ -11,7 +11,7 @@ export default class TaskForm extends Component {
   };
   componentWillMount() {
     this.setState({
-      id:this.props.task.id,
+      id: this.props.task.id,
       projectName: this.props.task.projectName,
       taskName: this.props.task.taskName,
       description: this.props.task.description,
@@ -21,7 +21,7 @@ export default class TaskForm extends Component {
   handleSubmit = obj => {
     this.props.handleSubmit(obj);
     this.setState({
-      id:null,
+      id: null,
       projectName: "",
       taskName: "",
       description: "",
@@ -76,15 +76,21 @@ export default class TaskForm extends Component {
               class="btn btn-info btn-circle"
               onClick={() => this.handleSubmit(this.state)}
             >
-              <i class="fas fa-check"/>
+              <i class="fas fa-check" />
             </button>
-            {/* <button
-              type="submit"
-              class="btn btn-danger btn-circle"
-              onClick={() =>this.props.isAddUpdate(true) }
-            >
-              <i class="fas fa-check"/>
-            </button> */}
+            {this.props.isAdd ? (
+              <>
+                <button
+                  type="submit"
+                  class="btn btn-danger btn-circle"
+                  onClick={() => this.props.isAddUpdate(false)}
+                >
+                  <i class="fas fa-times" />
+                </button>
+              </>
+            ) : (
+              <></>
+            )}
           </td>
         </tr>
       </>

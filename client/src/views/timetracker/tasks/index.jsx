@@ -39,7 +39,7 @@ class TimeSheet extends Component {
   render() {
     return (
       <>
-      <Modal size="lg" show={this.state.show} onHide={this.state.show}>
+      <Modal size="xl" show={this.state.show} onHide={this.state.show}>
       <Modal.Header className="d-flex ">
             <div> <Modal.Title>Daily Tasks</Modal.Title></div>
             <div className=""><Modal.Title>{this.state.selectedDate}</Modal.Title></div>
