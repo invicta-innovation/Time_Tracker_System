@@ -8,9 +8,12 @@ class DailyTask extends Component {
   state = {
     isAdd: false
   };
-  handlePush = taskObj => {
+  isAddUpdate=(status)=>{
+    this.setState({ isAdd: status });
+  }
+  handlePush = (taskObj)=> {
     console.log(taskObj)
-    this.setState({ isAdd: false });
+    this.isAddUpdate(false)
     this.props.createTask(taskObj)
   };
   componentWillMount(){
@@ -40,13 +43,13 @@ class DailyTask extends Component {
             {!this.state.isAdd ? (
               <button
                 type="submit"
-                class="btn btn-info "
+                class="btn btn-success btn-circle"
                 onClick={() => this.setState({ isAdd: true })}
               >
-                Add
+                <i class="fa fa-plus" aria-hidden="true"/>
               </button>
             ) : (
-              <TaskForm task={{}} handleSubmit={obj => this.handlePush(obj)} />
+              <TaskForm task={{}} handleSubmit={(obj) => this.handlePush(obj)}  isAddUpdate={(s)=>this.isAddUpdate(s)} />
             )}
           </tbody>
         </Table>

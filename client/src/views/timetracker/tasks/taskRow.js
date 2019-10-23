@@ -24,10 +24,10 @@ class TaskRow extends Component {
             <td>
               <button
                 type="submit"
-                class="btn btn-info "
+                class="btn btn-success btn-circle"
                 onClick={() => this.setState({ edit: true })}
               >
-                Edit
+               <i class="fas fa-pen-fancy" />
               </button>
             </td>
           </tr>
