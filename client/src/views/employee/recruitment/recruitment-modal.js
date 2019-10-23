@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ADD_RECRUITMENT, UPDATE_RECRUITMENT } from "../../../_constants/types";
 import { Modal, Form, Col } from "react-bootstrap";
-import { showModal } from "../../../_actions/employee/recruitment-action";
+import { showModal,addRecruitment,updateRecruitment } from "../../../_actions/employee/recruitment-action";
 
 class RecruitmentModal extends Component {
   state = {
@@ -13,7 +13,8 @@ class RecruitmentModal extends Component {
     endDate: "",
     workRole: "",
     employeeStatus: "",
-    designation: ""
+    designation: "",
+    action:null
   };
 
   componentWillReceiveProps(nextProps) {
@@ -34,16 +35,27 @@ class RecruitmentModal extends Component {
   };
   handleSubmit = () => {
     console.log(this.props.modaldata.action);
+    const {action}=this.state;
+    let recruitmentObj={
+      id: this.state.id,
+      employeeName: this.state.employeeName,
+      companyName: this.state.companyName,
+      startedDate: this.state.startedDate,
+      endDate: this.state.endDate,
+      workRole: this.state.workRole,
+      employeeStatus: this.state.employeeStatus,
+      designation: this.state.designation
+    }
     if (this.props.modaldata.action === "EDIT") {
-      this.props.updateRecruitment(this.state);
+      this.props.updateRecruitment(recruitmentObj);
     } else {
-      this.props.addRecruitment(this.state);
+      this.props.addRecruitment(recruitmentObj);
     }
   };
 
   render() {
     console.log("call recruitment render");
-    const { show, title } = this.props.modaldata;
+    const { show, title ,buttonName} = this.props.modaldata;
     return (
       <div>
         <Modal show={show}>
@@ -147,7 +159,7 @@ class RecruitmentModal extends Component {
               className="btn btn-info "
               onClick={this.handleSubmit}
             >
-              Save Changes
+              {buttonName}
             </button>
           </Modal.Footer>
         </Modal>
@@ -160,8 +172,8 @@ const mapStateToProps = state => ({
   recruitmentObj: state.recruitmentStore.recruitment
 });
 const mapDispatchToProps = dispatch => ({
-  updateRecruitment: obj => dispatch({ type: UPDATE_RECRUITMENT, payload: obj }),
-  addRecruitment: obj => dispatch({ type: ADD_RECRUITMENT, payload: obj }),
+  updateRecruitment: obj => dispatch(updateRecruitment(obj)),
+  addRecruitment: obj => dispatch(addRecruitment(obj)),
   showModal: status =>
     dispatch(showModal({ action: "ADD", show: status, title: "Add Recruitment" }))
 });
