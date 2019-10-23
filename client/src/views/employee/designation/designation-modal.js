@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { UPDATE_DESIGNATION, ADD_DESIGNATION } from '../../../_constants/types';
 import { connect } from 'react-redux';
 import { Modal, Form, Col } from "react-bootstrap";
-import { showModal, addDesignation } from '../../../_actions/employee/designation-action';
+import { showModal, addDesignation, updateDesignation } from '../../../_actions/employee/designation-action';
 
 class DesignationModal extends Component {
   state = {
@@ -16,10 +16,13 @@ class DesignationModal extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   componentWillReceiveProps(nextProps) {
+      this.setState({ action: action });
     const { action } = nextProps.modaldata;
-    if (action === "ADD") {
-      this.setState({ action:action });
-    }    
+    // if (action === "EDIT") {
+    // }else if (action === "ADD") {
+    //   let {id, designation} = nextProps.designationObj;
+    //   this.setState({ id: id, designation: designation, action: action });
+    // }    
   }
 
   handleSubmit = () => {
@@ -27,10 +30,12 @@ class DesignationModal extends Component {
     let designationObj = {
       designation: this.state.designation
     }
-    if (action === "ADD") {
-      this.props.addDesignation(designationObj);
+    this.props.addDesignation(designationObj);
+    // if (action === "ADD") {
 
-    }
+    // } else if (action === "EDIT") {
+    //   this.props.updateDesignation(designationObj);
+    // }
     //  else if (action == "EDIT") {
     //   this.props.updateRecuitmentType(recuitmentTypeObj);
     // }
@@ -102,6 +107,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   showModal: status => dispatch(showModal({ action: 'ADD', show: status, title: 'Add Designation' })),
   addDesignation: designationObj => dispatch(addDesignation(designationObj)),
+  updateDesignation: designationObj => dispatch(updateDesignation(designationObj))
 
 })
+
 export default connect(mapStateToProps, mapDispatchToProps)(DesignationModal)

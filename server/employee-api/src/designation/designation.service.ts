@@ -3,6 +3,7 @@ import {InjectRepository} from '@nestjs/typeorm';
 import { DesignationEntity } from './designation.entity';
 import { DesignationRepository } from './designation.repository';
 import { DesignationDto } from './designation.dto';
+import { UpdateResult } from 'typeorm';
 
 @Injectable()
 export class DesignationService {
@@ -27,9 +28,8 @@ export class DesignationService {
              return this.designationRepository.delete(id);
         }
 
-        updateDesignation(id, designationDto: DesignationDto): Promise<any>{
-            return this.designationRepository.update(id, designationDto);
+        updateDesignation(id, designationDto: DesignationDto): Promise<UpdateResult>{
+
+            return this.designationRepository.update(id, designationDto)
         }
-
-
 }

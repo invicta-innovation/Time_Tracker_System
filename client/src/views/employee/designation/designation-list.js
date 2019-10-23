@@ -30,6 +30,7 @@ class DesignationList extends Component {
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Edit"
+                  onClick={()=>showModal(designation)}
                 >
                   <i class="fas fa-pen-fancy" />
                 </button>
@@ -60,7 +61,7 @@ const mapStateToProps = state => ({
 })
 const mapDispatchToProps = dispatch => ({
   getDesignation: () => dispatch(fetchDesignation()),
-  addDesignation: (designatioObj) => dispatch(addDesignation(designatioObj)),
-  showModal: (designation) => dispatch(showModal({ action: 'ADD', show: true, title: 'Add Designation' }, designation))
+  // addDesignation: (designatioObj) => dispatch(addDesignation(designatioObj)),
+  showModal: (designation) => dispatch(showModal({ action: 'EDIT', show: true, title: 'Update Designation' }, designation))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(DesignationList)

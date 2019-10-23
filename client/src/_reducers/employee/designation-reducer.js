@@ -2,6 +2,8 @@ import {
   GET_DESIGNATION,
   SHOW_MODAL_DESIGNATION,
   ADD_DESIGNATION,
+  UPDATE_DESIGNATION,
+
 } from "../../_constants/types";
 
 const initialState = {
@@ -29,9 +31,16 @@ export default function (state = initialState, action) {
     case ADD_DESIGNATION:
       return {
         ...state,
-        modaldata:{show:false},
+        modaldata: { show: false },
         designations: state.designations.concat(action.payload)
       };
+    case UPDATE_DESIGNATION:
+      return {
+        ...state,
+        modaldata: { show: false},
+        designation: action.payload
+      };
+
     default:
       return state;
   }

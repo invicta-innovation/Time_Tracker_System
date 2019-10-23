@@ -32,7 +32,22 @@ export class DesignationController {
 
     @Put(':id')
     async updateDesignation(@Param('id') id, @Body() designationDto: DesignationDto): Promise<any>{
-        return await this.designationService.updateDesignation(id, designationDto);
+
+        let resultRespone;
+        let designationDtoTemp;
+        await this.designationService.updateDesignation(id, designationDto).then(response => 
+            resultRespone = response
+            );
+            let x = resultRespone.affected
+            console.log(x)
+        if(x !== 0){
+            designationDtoTemp = {
+                id: id,
+                designation: designationDto.designation,
+            }
+            return designationDtoTemp;
+        }
+        return null;
     }
 
 }

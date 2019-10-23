@@ -24,10 +24,10 @@ class RecruitmentTypeModal extends Component {
       typeName:this.state.typeName
     }
     
-    if (action== "ADD") {
+    if (action === "ADD") {
       this.props.addRecuitmentType(recuitmentTypeObj);
       }
-     else if (action == "EDIT") {
+     else if (action === "EDIT") {
       this.props.updateRecuitmentType(recuitmentTypeObj);
     }
   
@@ -35,10 +35,10 @@ class RecruitmentTypeModal extends Component {
 
   componentWillReceiveProps(nextProps) {
     const {action} =nextProps.modaldata;
-    if (action == "EDIT") {
+    if (action === "EDIT") {
       let {id,typeName}=nextProps.recuitmentType;
       this.setState({id,typeName,action});
-    } else if (action == "ADD") {
+    } else if (action === "ADD") {
       this.setState({ typeName: '', action:action });
     }
     
