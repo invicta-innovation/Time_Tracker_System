@@ -1,18 +1,14 @@
 import React, { Component } from "react";
 import TaskForm from "./taskForm";
+import { connect } from 'react-redux';
+import { updateTask } from "../../../_actions/time-tracker/task-action";
 
-export default class TaskRow extends Component {
+class TaskRow extends Component {
   state={
     edit:false
   }
   handleSubmit = taskObj => {
-    this.props.tasks.map(task => {
-      if (task.id === taskObj.id) {
-        return taskObj;
-      }else{
-        return task;
-      }
-    });
+    this.props.updateTask(taskObj)
     this.setState({ edit: false });
   };
   render() {
@@ -24,14 +20,14 @@ export default class TaskRow extends Component {
             <td>{task.projectName}</td>
             <td>{task.taskName}</td>
             <td>{task.description}</td>
-            <td>{task.duration}</td>
+            <td>{task.duration} hour</td>
             <td>
               <button
                 type="submit"
-                class="btn btn-info "
+                class="btn btn-success btn-circle"
                 onClick={() => this.setState({ edit: true })}
               >
-                Edit
+               <i class="fas fa-pen-fancy" />
               </button>
             </td>
           </tr>
@@ -46,3 +42,10 @@ export default class TaskRow extends Component {
     );
   }
 }
+const mapStateToProps = state =>({
+  taskList:state.taskStore.tasks
+})
+const mapDispatchToProps=dispatch=>({
+  updateTask:(obj) => dispatch(updateTask(obj))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(TaskRow)

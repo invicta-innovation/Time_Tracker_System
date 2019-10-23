@@ -73,11 +73,18 @@ export default class TaskForm extends Component {
           <td>
             <button
               type="submit"
-              class="btn btn-info "
+              class="btn btn-info btn-circle"
               onClick={() => this.handleSubmit(this.state)}
             >
-              Save
+              <i class="fas fa-check"/>
             </button>
+            {/* <button
+              type="submit"
+              class="btn btn-danger btn-circle"
+              onClick={() =>this.props.isAddUpdate(true) }
+            >
+              <i class="fas fa-check"/>
+            </button> */}
           </td>
         </tr>
       </>
