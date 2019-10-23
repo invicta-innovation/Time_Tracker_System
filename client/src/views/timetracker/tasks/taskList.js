@@ -3,32 +3,15 @@ import {  Table } from "react-bootstrap";
 import TaskForm from "./taskForm";
 import TaskRow from "./taskRow";
 import { connect } from 'react-redux';
-import { fetchTasks } from "../../../_actions/time-tracker/task-action";
-
-const tasks = [
-  {
-    id: 1,
-    projectName: "leave system",
-    taskName: "request leave",
-    description: "apply for a leave",
-    duration: 3.0
-  },
-  {
-    id: 2,
-    projectName: "leave",
-    taskName: "request leave",
-    description: "apply leave",
-    duration: 2.5
-  }
-];
-const c = 1;
+import { fetchTasks, createTask } from "../../../_actions/time-tracker/task-action";
 class DailyTask extends Component {
   state = {
     isAdd: false
   };
   handlePush = taskObj => {
-    tasks.push(taskObj);
+    console.log(taskObj)
     this.setState({ isAdd: false });
+    this.props.createTask(taskObj)
   };
   componentWillMount(){
     this.props.getTasks()
@@ -48,14 +31,13 @@ class DailyTask extends Component {
           <tbody>
             {this.props.taskList.map(task =>(
                 <TaskRow
-                  tasks={tasks}
+                  tasks={this.props.taskList}
                   key={task.id}
                   task={task}
                 />
               )
             )}
             {!this.state.isAdd ? (
-              // <tr>
               <button
                 type="submit"
                 class="btn btn-info "
@@ -64,7 +46,6 @@ class DailyTask extends Component {
                 Add
               </button>
             ) : (
-              // </tr>
               <TaskForm task={{}} handleSubmit={obj => this.handlePush(obj)} />
             )}
           </tbody>
@@ -77,6 +58,7 @@ const mapStateToProps = state =>({
   taskList:state.taskStore.tasks
 })
 const mapDispatchToProps=dispatch=>({
- getTasks:()=>dispatch(fetchTasks())
+ getTasks:()=>dispatch(fetchTasks()),
+ createTask:(obj)=>dispatch(createTask(obj))
 })
 export default connect (mapStateToProps,mapDispatchToProps)(DailyTask);

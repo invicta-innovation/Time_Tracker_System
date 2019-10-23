@@ -1,4 +1,4 @@
-import { GET_TASK } from "../../_constants/types"
+import { GET_TASK, ADD_TASK,EDIT_TASK } from "../../_constants/types"
 
 export const fetchTasks=()=>dispatch=>{
     dispatch({
@@ -21,3 +21,14 @@ export const fetchTasks=()=>dispatch=>{
         ]
     })
 }
+export const createTask=(obj)=>dispatch=>{
+  dispatch({
+    type:ADD_TASK,
+    payload:obj
+  })}
+
+  export const updateTask=(obj)=>dispatch=>{
+    dispatch({
+      type:EDIT_TASK,
+      payload:obj
+    })}

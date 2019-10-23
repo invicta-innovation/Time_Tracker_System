@@ -29,7 +29,7 @@ import WorkflowMain from "../views/leave-system/leave-workflow/workflow-main";
 
 import Company from "../views/company/manageCompany/company";
 import Project from "../views/company/manageProject/project";
-import TimeSheet from "../views/timetracker/timesheet";
+import TimeSheet from "../views/timetracker/tasks";
 import Profile from "../views/employee/profile/profile";
 import Designation from "../views/employee/designation/designation";
 import Recruitment from "../views/employee/recruitment/recruitment";
