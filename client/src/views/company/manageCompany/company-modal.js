@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {ADD_COMPANY,UPDATE_COMPANY} from '../../../_constants/types';
 import {Modal,Form,Col} from "react-bootstrap";
-import {showModal} from '../../../_actions/company/company-action';
+import {showModal,addCompany,updateCompany} from '../../../_actions/company/company-action';
 
 class CompanyModal extends Component {
     state={
@@ -125,8 +125,8 @@ class CompanyModal extends Component {
         companyObj:state.companyStore.company
       })
       const mapDispatchToProps=dispatch=>({
-        updateCompany: (obj)=> dispatch({type:UPDATE_COMPANY,payload:obj}),
-        addCompany: (obj)=> dispatch({type:ADD_COMPANY,payload:obj}),
+        updateCompany: (obj)=> dispatch(updateCompany(obj)),
+        addCompany: (obj)=> dispatch(addCompany(obj)),
         showModal: status =>dispatch(showModal({action:'ADD',show:status,title:'Add Company'}))
       })
     export default connect(mapStateToProps,mapDispatchToProps)(CompanyModal)

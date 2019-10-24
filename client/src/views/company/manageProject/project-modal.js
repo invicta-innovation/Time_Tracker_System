@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { UPDATE_PROJECT, ADD_PROJECT } from '../../../_constants/types';
 import { connect } from 'react-redux';
 import {Modal,Form,Col} from "react-bootstrap";
-import {showModal} from '../../../_actions/company/project-action';
+import {showModal,addProject} from '../../../_actions/company/project-action';
 
 class ProjectModal extends Component {
     state={
@@ -140,7 +140,7 @@ class ProjectModal extends Component {
       })
       const mapDispatchToProps=dispatch=>({
         updateProject: (obj)=> dispatch({type:UPDATE_PROJECT,payload:obj}),
-        addProject: (obj)=> dispatch({type:ADD_PROJECT,payload:obj}),
+        addProject: (obj)=> dispatch(addProject(obj)),
         showModal: status =>dispatch(showModal({action:'ADD',show:status,title:'Add Project'}))
       })
     export default connect(mapStateToProps,mapDispatchToProps)(ProjectModal)

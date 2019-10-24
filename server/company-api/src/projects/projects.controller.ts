@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common'
 import { ProjectsService } from './projects.service';
 import { ProjectEntity } from './projects.entity';
 
-@Controller('projects')
+@Controller('company/projects')
 export class ProjectsController {
     constructor(private projectService :ProjectsService){}
 
