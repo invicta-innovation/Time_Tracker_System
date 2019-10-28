@@ -40,6 +40,6 @@ const mapStateToProps = state =>({
   
 })
 const mapDispatchToProps=dispatch=>({
-  showModal: (status)=> dispatch(showModal({action:'ADD',show:status,title:'Add Recruitment'}))
+  showModal: (status)=> dispatch(showModal({action:'ADD',show:status,title:'Add Recruitment',buttonName: 'Save'}))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Recruitment)
