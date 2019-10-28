@@ -37,6 +37,8 @@ class TimeSheet extends Component {
   };
 
   render() {
+    // const today = new Date();
+    // console.log(today);
     return (
       <>
       <Modal size="xl" show={this.state.show} onHide={this.state.show}>
@@ -58,6 +60,7 @@ class TimeSheet extends Component {
             
         </Modal.Footer>
     </Modal>
+
       <div className="col-sm-8">
         <section class="py-3">
           <div class="card">
@@ -66,7 +69,6 @@ class TimeSheet extends Component {
                 dateClick={this.handleDateClick}
                 plugins={[dayGridPlugin, interactionPlugin]}
               />
-             
             </div>
           </div>
         </section>

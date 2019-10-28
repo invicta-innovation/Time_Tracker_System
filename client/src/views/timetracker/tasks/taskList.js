@@ -20,6 +20,7 @@ class DailyTask extends Component {
     this.props.getTasks()
   }
   render() {
+      console.log(this.props.selectedDate)
     return (
       <div>
         <Table className="table table-striped table-hover card-text">
@@ -37,6 +38,7 @@ class DailyTask extends Component {
                   tasks={this.props.taskList}
                   key={task.id}
                   task={task}
+                  selectedDate={this.props.selectedDate}
                 />
               )
             )}

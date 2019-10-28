@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TaskForm from "./taskForm";
 import { connect } from 'react-redux';
 import { updateTask } from "../../../_actions/time-tracker/task-action";
+import { formatDate } from "@fullcalendar/core";
 
 class TaskRow extends Component {
   state={
@@ -12,6 +13,9 @@ class TaskRow extends Component {
     this.setState({ edit: false });
   };
   render() {
+    const today = formatDate(new Date())
+    console.log(today)
+    console.log(formatDate(this.props.selectedDate))
     const task = this.props.task;
     return (
       <>
@@ -22,13 +26,16 @@ class TaskRow extends Component {
             <td>{task.description}</td>
             <td>{task.duration} hour</td>
             <td>
-              <button
+             {
+               (formatDate(today) < formatDate(this.props.selectedDate)) ?
+             (<button
                 type="submit"
                 class="btn btn-success btn-circle"
                 onClick={() => this.setState({ edit: true })}
               >
                <i class="fas fa-pen-fancy" />
-              </button>
+              </button>):(<></>)
+            }
             </td>
           </tr>
         ) : (
